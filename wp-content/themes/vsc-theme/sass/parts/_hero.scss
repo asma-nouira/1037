@@ -8,6 +8,11 @@ $font-family: 'Roboto', sans-serif;
   min-height: 600px;
   overflow: hidden;
   font-family: $font-family;
+
+  .vc_column-inner,
+  .wpb_wrapper {
+    padding: 0 !important;
+  }
 }
 
 .hero-bg {
@@ -30,8 +35,8 @@ $font-family: 'Roboto', sans-serif;
 }
 
 .hero-badge {
-  position: absolute;
-  right: 0;
+  position: absolute !important;
+  right: 0 !important;
   top: 50%;
   transform: translateY(-50%);
   background: #1a8fc4;
