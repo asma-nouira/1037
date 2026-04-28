@@ -2,7 +2,7 @@
 
 $font-family: 'Roboto', sans-serif;
 
-.site-header {
+#masthead.site-header {
   font-family: $font-family;
   position: fixed;
   top: 0;
@@ -48,7 +48,6 @@ $font-family: 'Roboto', sans-serif;
 
       > li {
         > a {
-          color: #333;
           @include fontSize(14);
           font-weight: 500;
           padding: 28px widthCalc(15);
@@ -56,15 +55,11 @@ $font-family: 'Roboto', sans-serif;
           letter-spacing: 0.5px;
           transition: color 0.3s;
           display: block;
-
-          &:hover {
-            color: #1a8fc4;
-          }
         }
 
         &[class*="tel-"] > a,
         > a[href^="tel:"] {
-          color: #1a8fc4;
+          color: #1a8fc4 !important;
           font-weight: 700;
         }
 
@@ -72,7 +67,7 @@ $font-family: 'Roboto', sans-serif;
           border: 1px solid #1a8fc4;
           border-radius: 3px;
           padding: 5px 12px !important;
-          color: #1a8fc4;
+          color: #1a8fc4 !important;
           margin-left: 5px;
         }
       }
@@ -116,12 +111,22 @@ $font-family: 'Roboto', sans-serif;
   }
 }
 
-body {
+#masthead .main-navigation #primary-menu > li > a {
+  color: #333333 !important;
+}
+
+#masthead .main-navigation #primary-menu > li > a:hover {
+  color: #1a8fc4 !important;
+}
+
+html body,
+body.page,
+body.home {
   padding-top: 80px !important;
 }
 
 @media (max-width: 767px) {
-  .site-header {
+  #masthead.site-header {
     .header-container {
       height: 60px;
       padding: 0 15px;
@@ -184,7 +189,9 @@ body {
     }
   }
 
-  body {
+  html body,
+  body.page,
+  body.home {
     padding-top: 60px !important;
   }
 }

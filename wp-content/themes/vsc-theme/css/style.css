@@ -70,14 +70,27 @@ ul {
 
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: 100vh !important;
+  min-height: 600px !important;
   overflow: hidden;
+  max-width: 100% !important;
+  padding: 0 !important;
   font-family: "Roboto", sans-serif;
 }
-.hero-section .vc_column-inner,
-.hero-section .wpb_wrapper {
+
+.hero-section,
+.hero-section > .vc_row,
+.hero-section > .vc_column_container,
+.hero-section > .vc_column_container > .vc_column-inner,
+.hero-section .wpb_wrapper,
+.hero-section .wpb_raw_code,
+.hero-section .wpb_raw_code > .wpb_content_element {
+  height: 100vh !important;
+  min-height: 600px !important;
   padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 .hero-bg {
@@ -206,4 +219,7 @@ body .wpcf7-mail-sent-ok {
 }
 
 /***************/
+body {
+  margin: 0;
+}
 /*# sourceMappingURL=../css/style.css.map */
