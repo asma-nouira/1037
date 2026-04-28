@@ -8,22 +8,20 @@
   }
 
   .hero-badge {
-    position: absolute;
-    right: auto;
-    top: auto;
-    transform: none;
-    width: 100%;
-    bottom: 50px;
-    left: 0;
-    padding: 25px 20px;
+    padding: 30px 25px;
   }
 
   .hero-badge__title {
-    font-size: 24px !important;
+    font-size: 28px !important;
+  }
+
+  .hero-badge__btn {
+    padding: 12px 30px;
+    font-size: 13px !important;
   }
 
   .hero-bottom-bar {
-    @include fontSize(13);
+    font-size: 13px !important;
     padding: 12px 15px;
   }
 }
