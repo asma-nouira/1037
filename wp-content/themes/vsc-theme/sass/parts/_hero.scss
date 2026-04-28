@@ -1,28 +1,82 @@
-.hero {
+@import './fonts.scss';
+
+$font-family: 'Roboto', sans-serif;
+
+.hero-section {
   position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  font-family: $font-family;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 500px;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-badge {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a8fc4;
+  padding: widthCalc(30) widthCalc(45);
   text-align: center;
+  z-index: 2;
+}
 
-  h1 {
-    @include fontSize(45);
-    color: #fff;
-    text-transform: uppercase;
-  }
+.hero-badge__title {
+  color: #fff;
+  font-family: $font-family;
+  @include fontSize(35);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
 
-  .hero-subtitle {
-    @include fontSize(21);
-    color: #fff;
-  }
+.hero-badge__btn {
+  display: inline-block;
+  margin-top: 25px;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 12px widthCalc(30);
+  text-transform: uppercase;
+  font-weight: 500;
+  @include fontSize(14);
+  letter-spacing: 1px;
+  transition: background 0.3s, color 0.3s;
 
-  @media (max-width: $table-width) {
-    height: 300px;
+  &:hover {
+    background: #fff;
+    color: #1a8fc4;
   }
+}
+
+.hero-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(26, 143, 196, 0.9);
+  padding: 15px 20px;
+  text-align: center;
+  color: #fff;
+  @include fontSize(16);
+  font-weight: 400;
+  z-index: 2;
 }

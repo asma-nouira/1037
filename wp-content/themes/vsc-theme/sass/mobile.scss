@@ -1,1 +1,29 @@
 @import './statics.scss';
+@import './parts/fonts.scss';
+
+@media (max-width: $table-width) {
+  .hero-section {
+    height: 70vh;
+    min-height: 450px;
+  }
+
+  .hero-badge {
+    position: absolute;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    bottom: 50px;
+    left: 0;
+    padding: 25px 20px;
+  }
+
+  .hero-badge__title {
+    font-size: 24px !important;
+  }
+
+  .hero-bottom-bar {
+    @include fontSize(13);
+    padding: 12px 15px;
+  }
+}

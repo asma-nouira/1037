@@ -66,3 +66,36 @@ function vsc_map()
 }
 
 add_shortcode('vsc_map', 'vsc_map');
+
+function vsc_hero_shortcode($atts)
+{
+    $atts = shortcode_atts(array(
+        'image_url'      => '',
+        'titre_1'        => 'RENDEZ-VOUS',
+        'titre_2'        => 'RAPIDE',
+        'texte_bouton'   => 'PRENDRE RENDEZ-VOUS',
+        'lien_bouton'    => '/nous-joindre/',
+        'texte_bandeau'  => "Obtenez un accès rapide : Aucune référence médicale n'est requise pour prendre rendez-vous.",
+    ), $atts, 'vsc_hero');
+
+    ob_start();
+    ?>
+    <section class="hero-section">
+        <div class="hero-bg" style="background-image:url(<?php echo esc_url($atts['image_url']); ?>)"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-badge">
+            <div class="hero-badge__title"><?php echo esc_html($atts['titre_1']); ?></div>
+            <div class="hero-badge__title"><?php echo esc_html($atts['titre_2']); ?></div>
+            <a href="<?php echo esc_url($atts['lien_bouton']); ?>" class="hero-badge__btn"><?php echo esc_html($atts['texte_bouton']); ?></a>
+        </div>
+
+        <div class="hero-bottom-bar">
+            <?php echo esc_html($atts['texte_bandeau']); ?>
+        </div>
+    </section>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('vsc_hero', 'vsc_hero_shortcode');
