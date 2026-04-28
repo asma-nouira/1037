@@ -24,21 +24,29 @@
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-				?>	
-		</div><!-- .site-branding -->
+		<div class="header-container">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vsc-theme' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+			<div class="site-branding">
+				<?php the_custom_logo(); ?>
+			</div><!-- .site-branding -->
+
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+
+			<nav id="site-navigation" class="main-navigation">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					'container'      => false,
+				) );
+				?>
+			</nav><!-- #site-navigation -->
+
+		</div><!-- .header-container -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
