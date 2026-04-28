@@ -9,7 +9,9 @@ $font-family: 'Roboto', sans-serif;
   left: 0;
   width: 100%;
   z-index: 9999;
-  transition: box-shadow 0.3s;
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
 
   .header-container {
     max-width: 1200px;
@@ -52,21 +54,6 @@ $font-family: 'Roboto', sans-serif;
           letter-spacing: 0.5px;
           transition: color 0.3s;
           display: block;
-          color:white;
-        }
-
-        &[class*="tel-"] > a,
-        > a[href^="tel:"] {
-          color: #1a8fc4 !important;
-          font-weight: 700;
-        }
-
-        &:last-child > a {
-          border: 1px solid #1a8fc4;
-          border-radius: 3px;
-          padding: 5px 12px !important;
-          color: #1a8fc4 !important;
-          margin-left: 5px;
         }
       }
     }
@@ -109,18 +96,46 @@ $font-family: 'Roboto', sans-serif;
   }
 }
 
+#masthead.site-header.scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
 #masthead .main-navigation #primary-menu > li > a {
-  color: white !important;
+  color: #ffffff;
+  transition: color 0.3s;
 }
 
-#masthead .main-navigation #primary-menu > li > a:hover {
-  color: #1a8fc4 !important;
+#masthead.scrolled .main-navigation #primary-menu > li > a {
+  color: #333333;
 }
 
-html body,
-body.page,
-body.home {
-  padding-top: 80px !important;
+#masthead.scrolled .main-navigation #primary-menu > li > a:hover {
+  color: #1a8fc4;
+}
+
+#masthead .tel-link,
+#masthead .main-navigation #primary-menu > li > a[href^="tel:"] {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#masthead.scrolled .tel-link,
+#masthead.scrolled .main-navigation #primary-menu > li > a[href^="tel:"] {
+  border-color: #1a8fc4;
+  color: #1a8fc4;
+}
+
+body {
+  padding-top: 0;
+}
+
+body.page:not(.home) .site-content,
+body.single .site-content,
+body.archive .site-content,
+body.search .site-content {
+  padding-top: 80px;
 }
 
 @media (max-width: 767px) {
@@ -143,9 +158,13 @@ body.home {
       .hamburger-line {
         width: 25px;
         height: 2px;
-        background: #333;
+        background: #fff;
         transition: 0.3s;
       }
+    }
+
+    &.scrolled .menu-toggle .hamburger-line {
+      background: #333;
     }
 
     .main-navigation {
@@ -167,6 +186,7 @@ body.home {
         > li > a {
           padding: 15px 20px;
           border-bottom: 1px solid #f0f0f0;
+          color: #333 !important;
         }
       }
 
@@ -187,9 +207,10 @@ body.home {
     }
   }
 
-  html body,
-  body.page,
-  body.home {
-    padding-top: 60px !important;
+  body.page:not(.home) .site-content,
+  body.single .site-content,
+  body.archive .site-content,
+  body.search .site-content {
+    padding-top: 60px;
   }
 }
