@@ -73,24 +73,26 @@ function vsc_hero_shortcode($atts)
         'texte_bandeau'  => "Obtenez un accès rapide : Aucune référence médicale n'est requise pour prendre rendez-vous.",
     ), $atts, 'vsc_hero');
 
+    $theme_uri = get_template_directory_uri();
+
     // Slides du hero — modifie ce tableau pour ajouter/changer les slides
     $slides = array(
         array(
-            'image'    => '/wp-content/themes/vsc-theme/img/hero-1.jpg',
+            'image'    => $theme_uri . '/img/hero-1.jpg',
             'titre_1'  => 'RENDEZ-VOUS',
             'titre_2'  => 'RAPIDE',
             'btn_text' => 'PRENDRE RENDEZ-VOUS',
             'btn_url'  => '/nous-joindre/',
         ),
         array(
-            'image'    => '/wp-content/themes/vsc-theme/img/hero-2.jpg',
+            'image'    => $theme_uri . '/img/hero-2.jpg',
             'titre_1'  => 'CENTRE DE PRÉVENTION',
             'titre_2'  => 'DU CANCER DIGESTIF',
             'btn_text' => 'EN SAVOIR PLUS',
             'btn_url'  => '/notre-expertise/',
         ),
         array(
-            'image'    => '/wp-content/themes/vsc-theme/img/hero-3.jpg',
+            'image'    => $theme_uri . '/img/hero-3.jpg',
             'titre_1'  => 'UNE ÉQUIPE',
             'titre_2'  => 'À VOTRE ÉCOUTE',
             'btn_text' => 'NOUS CONTACTER',
@@ -103,7 +105,7 @@ function vsc_hero_shortcode($atts)
     <section class="hero-section">
         <div class="hero-slider">
             <?php foreach ($slides as $slide) : ?>
-                <div class="hero-slide" style="background-image:url(<?php echo esc_url($slide['image']); ?>)">
+                <div class="hero-slide" style="background-image: url('<?php echo esc_url($slide['image']); ?>');">
                     <div class="hero-slide__overlay"></div>
                     <div class="hero-slide__content">
                         <h2 class="hero-slide__title"><?php echo esc_html($slide['titre_1']); ?></h2>

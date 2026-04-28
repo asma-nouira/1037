@@ -69,6 +69,7 @@ ul {
 }
 
 .hero-section {
+  width: 100%;
   position: relative;
   overflow: hidden;
   font-family: "Roboto", sans-serif;
@@ -80,15 +81,25 @@ ul {
 }
 
 .hero-slide {
-  height: 85vh;
-  min-height: 550px;
-  max-height: 750px;
-  background-size: cover;
-  background-position: center;
+  height: 85vh !important;
+  min-height: 550px !important;
+  max-height: 750px !important;
+  background-color: #2c3e50;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
   position: relative;
   display: flex !important;
   align-items: center;
   justify-content: flex-end;
+}
+
+.hero-slider .slick-list,
+.hero-slider .slick-track,
+.hero-slider .slick-slide,
+.hero-slider .slick-slide > div {
+  height: 85vh !important;
+  min-height: 550px !important;
 }
 
 .hero-slide__overlay {
@@ -104,16 +115,16 @@ ul {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: calc(40vw / 19.2) calc(80vw / 19.2);
+  padding: calc(30vw / 19.2) calc(50vw / 19.2);
   background: transparent;
-  max-width: 500px;
-  margin-right: calc(80vw / 19.2);
+  max-width: 450px;
+  margin-right: calc(60vw / 19.2);
 }
 
 .hero-slide__title {
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: calc(50vw / 19.2);
+  font-size: calc(40vw / 19.2);
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.15;
@@ -121,14 +132,9 @@ ul {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   margin: 0;
 }
-@media (min-width: 1366px) {
-  .hero-slide__title {
-    font-size: calc(50vw / 19.2);
-  }
-}
 @media (max-width: 767px) {
   .hero-slide__title {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
@@ -152,19 +158,39 @@ ul {
 .hero-slider .slick-dots {
   position: absolute;
   bottom: 60px;
+  left: 0;
   width: 100%;
   text-align: center;
-  z-index: 3;
+  z-index: 5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-slider .slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.hero-slider .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 0;
+  font-size: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .hero-slider .slick-dots li button:before {
-  color: #ffffff;
-  font-size: 12px;
-  opacity: 0.5;
+  display: none;
 }
 
-.hero-slider .slick-dots li.slick-active button:before {
-  opacity: 1;
+.hero-slider .slick-dots li.slick-active button {
+  background: #ffffff;
 }
 
 .hero-bottom-bar {
