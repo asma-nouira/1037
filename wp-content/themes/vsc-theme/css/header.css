@@ -75,8 +75,6 @@ ul {
   left: 0;
   width: 100%;
   z-index: 9999;
-  background: #fff;
-  background-color: #ffffff !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s;
 }
@@ -115,6 +113,7 @@ ul {
   letter-spacing: 0.5px;
   transition: color 0.3s;
   display: block;
+  color: white;
 }
 @media (min-width: 1366px) {
   #masthead.site-header .main-navigation #primary-menu > li > a {
@@ -169,7 +168,7 @@ ul {
 }
 
 #masthead .main-navigation #primary-menu > li > a {
-  color: #333333 !important;
+  color: white !important;
 }
 
 #masthead .main-navigation #primary-menu > li > a:hover {
