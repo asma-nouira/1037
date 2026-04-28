@@ -1,6 +1,9 @@
 @import './fonts.scss';
 
+$font-family: 'Roboto', sans-serif;
+
 .site-header {
+  font-family: $font-family;
   position: fixed;
   top: 0;
   left: 0;
