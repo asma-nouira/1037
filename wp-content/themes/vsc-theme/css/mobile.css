@@ -69,18 +69,21 @@ ul {
 }
 
 @media (max-width: 767px) {
-  .hero-section {
+  .hero-slide {
     height: 70vh;
-    min-height: 450px;
+    min-height: 400px;
+    justify-content: center;
   }
-  .hero-badge {
-    padding: 30px 25px;
+  .hero-slide__content {
+    margin-right: 0;
+    padding: 20px;
+    max-width: 100%;
   }
-  .hero-badge__title {
-    font-size: 28px !important;
+  .hero-slide__title {
+    font-size: 26px !important;
   }
-  .hero-badge__btn {
-    padding: 12px 30px;
+  .hero-slide__btn {
+    padding: 12px 25px;
     font-size: 13px !important;
   }
   .hero-bottom-bar {

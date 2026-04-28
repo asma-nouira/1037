@@ -1,5 +1,17 @@
-jQuery(document).on('ready', function() {
-    jQuery(".center-slider-full").slick({
+jQuery(document).ready(function($) {
+    $('.hero-slider').slick({
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'ease-in-out',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false
+    });
+
+    $(".center-slider-full").slick({
         centerMode: true,
         centerPadding: '0',
         slidesToShow: 1,
@@ -7,7 +19,7 @@ jQuery(document).on('ready', function() {
         autoplaySpeed: 20000,
         infinite: true,
         dots: true,
-        arrows:false,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1366,
@@ -37,10 +49,7 @@ jQuery(document).on('ready', function() {
                 }
             }
         ]
-    })
-.on('setPosition', function (event, slick) {
+    }).on('setPosition', function (event, slick) {
         slick.$slides.css('height', slick.$slideTrack.height() + 'px');
     });
-
 });
-
