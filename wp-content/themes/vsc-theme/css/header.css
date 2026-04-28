@@ -75,7 +75,6 @@ ul {
   left: 0;
   width: 100%;
   z-index: 9999;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s;
 }
 #masthead.site-header .header-container {
