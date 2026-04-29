@@ -127,6 +127,9 @@ ul {
   margin-right: 0;
   padding: calc(30vw / 19.2);
   background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 @media (max-width: 767px) {
   .hero-slide__content {
@@ -137,6 +140,8 @@ ul {
 }
 
 .hero-slide__title {
+  display: block;
+  width: 100%;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-size: calc(30vw / 19.2);
