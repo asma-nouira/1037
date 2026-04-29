@@ -79,22 +79,19 @@ function vsc_hero_shortcode($atts)
     $slides = array(
         array(
             'image'    => $theme_uri . '/img/hero-1.jpg',
-            'titre_1'  => 'RENDEZ-VOUS',
-            'titre_2'  => 'RAPIDE',
+            'titre'    => 'RENDEZ-VOUS RAPIDE',
             'btn_text' => 'PRENDRE RENDEZ-VOUS',
             'btn_url'  => '/nous-joindre/',
         ),
         array(
             'image'    => $theme_uri . '/img/hero-2.jpg',
-            'titre_1'  => 'CENTRE DE PRÉVENTION',
-            'titre_2'  => 'DU CANCER DIGESTIF',
+            'titre'    => 'CENTRE DE PRÉVENTION DU CANCER DIGESTIF',
             'btn_text' => 'EN SAVOIR PLUS',
             'btn_url'  => '/notre-expertise/',
         ),
         array(
             'image'    => $theme_uri . '/img/hero-3.jpg',
-            'titre_1'  => 'UNE ÉQUIPE',
-            'titre_2'  => 'À VOTRE ÉCOUTE',
+            'titre'    => 'UNE ÉQUIPE À VOTRE ÉCOUTE',
             'btn_text' => 'NOUS CONTACTER',
             'btn_url'  => '/nous-joindre/',
         ),
@@ -108,8 +105,7 @@ function vsc_hero_shortcode($atts)
                 <div class="hero-slide" style="background-image: url('<?php echo esc_url($slide['image']); ?>');">
                     <div class="hero-slide__overlay"></div>
                     <div class="hero-slide__content">
-                        <h2 class="hero-slide__title"><?php echo esc_html($slide['titre_1']); ?></h2>
-                        <h2 class="hero-slide__title"><?php echo esc_html($slide['titre_2']); ?></h2>
+                        <h2 class="hero-slide__title"><?php echo esc_html($slide['titre']); ?></h2>
                         <a href="<?php echo esc_url($slide['btn_url']); ?>" class="hero-slide__btn"><?php echo esc_html($slide['btn_text']); ?></a>
                     </div>
                 </div>
