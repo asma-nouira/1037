@@ -111,10 +111,6 @@ function vsc_hero_shortcode($atts)
                 </div>
             <?php endforeach; ?>
         </div>
-
-        <div class="hero-bottom-bar">
-            <?php echo esc_html($atts['texte_bandeau']); ?>
-        </div>
     </section>
     <?php
     return ob_get_clean();
