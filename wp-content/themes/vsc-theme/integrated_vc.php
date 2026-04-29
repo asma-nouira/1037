@@ -117,3 +117,48 @@ function vsc_hero_shortcode($atts)
 }
 
 add_shortcode('vsc_hero', 'vsc_hero_shortcode');
+
+function vsc_presentation_shortcode($atts)
+{
+    $atts = shortcode_atts(array(
+        'titre' => 'Centre de prévention du cancer digestif',
+        'texte' => "La Clinique 1037, Centre de prévention du cancer digestif, se spécialise en gastroentérologie, gastroscopie, coloscopie longue et sigmoïdoscopie. Toutes les procédures sont pratiquées par des gastroentérologues expérimentés et certains sont affiliés à des centres hospitaliers universitaires. La Clinique 1037 satisfait ou surpasse les standards hospitaliers pour la stérilité, pour le monitoring et pour la sécurité des patients. Veuillez noter que nous sommes situés au 2e étage d'un édifice sans ascenseur : vous aurez donc environ 25 marches à monter.",
+    ), $atts, 'vsc_presentation');
+
+    ob_start();
+    ?>
+    <section class="presentation-section">
+        <div class="presentation-container">
+            <h1><?php echo esc_html($atts['titre']); ?></h1>
+            <p><?php echo esc_html($atts['texte']); ?></p>
+        </div>
+    </section>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('vsc_presentation', 'vsc_presentation_shortcode');
+
+function vsc_services_grid_shortcode($atts)
+{
+    $services = array(
+        array('titre' => 'Gastroscopie',         'url' => '/gastroscopie/'),
+        array('titre' => 'Coloscopie longue',    'url' => '/coloscopie-longue/'),
+        array('titre' => 'Sigmoïdoscopie',       'url' => '/coloscopie-courte/'),
+        array('titre' => 'Endoscopie digestive', 'url' => '/endoscopie/'),
+    );
+
+    ob_start();
+    ?>
+    <section class="services-grid">
+        <?php foreach ($services as $service) : ?>
+            <a href="<?php echo esc_url($service['url']); ?>" class="service-card">
+                <h2><?php echo esc_html($service['titre']); ?></h2>
+            </a>
+        <?php endforeach; ?>
+    </section>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('vsc_services_grid', 'vsc_services_grid_shortcode');

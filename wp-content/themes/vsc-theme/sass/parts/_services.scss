@@ -1,0 +1,60 @@
+@import './fonts.scss';
+
+.services-grid {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+}
+
+.service-card {
+  flex: 1;
+  background: #1a8fc4;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    background: #157ba8;
+  }
+
+  h2 {
+    color: #ffffff;
+    @include fontSize(18);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    flex: 0 0 50%;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:nth-child(2n) {
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex: 0 0 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

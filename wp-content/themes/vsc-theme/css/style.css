@@ -233,6 +233,107 @@ ul {
   z-index: 4;
 }
 
+.presentation-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.presentation-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.presentation-container h1 {
+  font-size: calc(30vw / 13.66);
+  color: #333333;
+  font-weight: 300;
+  margin: 0 0 25px;
+  line-height: 1.3;
+}
+@media (min-width: 1366px) {
+  .presentation-container h1 {
+    font-size: calc(30vw / 19.2);
+  }
+}
+@media (max-width: 767px) {
+  .presentation-container h1 {
+    font-size: 22px !important;
+  }
+}
+.presentation-container p {
+  font-size: calc(15vw / 13.66);
+  color: #666666;
+  line-height: 1.8;
+  margin: 0;
+}
+@media (min-width: 1366px) {
+  .presentation-container p {
+    font-size: calc(15vw / 19.2);
+  }
+}
+.services-grid {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .services-grid {
+    flex-wrap: wrap;
+  }
+}
+
+.service-card {
+  flex: 1;
+  background: #1a8fc4;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.service-card:last-child {
+  border-right: none;
+}
+.service-card:hover {
+  background: #157ba8;
+}
+.service-card h2 {
+  color: #ffffff;
+  font-size: calc(18vw / 13.66);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+@media (min-width: 1366px) {
+  .service-card h2 {
+    font-size: calc(18vw / 19.2);
+  }
+}
+@media (max-width: 767px) {
+  .service-card {
+    flex: 0 0 50%;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .service-card:nth-child(2n) {
+    border-right: none;
+  }
+}
+@media (max-width: 425px) {
+  .service-card {
+    flex: 0 0 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .service-card:last-child {
+    border-bottom: none;
+  }
+}
+
 /**************/
 .wpcf7-not-valid-tip {
   display: none !important;
