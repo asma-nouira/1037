@@ -30,7 +30,7 @@
     </a>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
+		<nav id="site-navigation" class="main-navigation main-nav">
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
