@@ -497,7 +497,37 @@ p {
     width: 520px; height: 520px;
     animation: heroFloat 6s ease-in-out infinite, heroIn 1.2s ease-out 0.4s both;
   }
-
+ @keyframes heroFloat {
+    0%,100% { transform: translateY(-50%) rotate(0deg); }
+    50% { transform: translateY(calc(-50% - 12px)) rotate(2deg); }
+  }
+  .pepper-circle {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #c44420 0%, #8a1f1b 50%, #4a0f0c 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.3), inset 0 -20px 60px rgba(0,0,0,0.2);
+    position: relative; overflow: hidden;
+  }
+  .pepper-circle::before {
+    content: ''; position: absolute; inset: 15%;
+    border-radius: 50%; border: 1px solid rgba(255,255,255,0.06);
+  }
+  .pepper-circle::after {
+    content: ''; position: absolute; top: 15%; left: 25%;
+    width: 30%; height: 20%; border-radius: 50%;
+    background: rgba(255,180,120,0.15); filter: blur(20px);
+  }
+  .pepper-emoji {
+    font-size: 140px; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+    position: relative; z-index: 1;
+  }
+  .pepper-ring {
+    position: absolute; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.08);
+    animation: pepperSpin 30s linear infinite;
+  }
+  .pepper-ring:nth-child(2) { inset: 5%; }
+  .pepper-ring:nth-child(3) { inset: -8%; animation-direction: reverse; animation-duration: 45s; }
+  @keyframes pepperSpin { to { transform: rotate(360deg); } }
 // ============================================
 // 8. CARTES RECETTES
 // ============================================
