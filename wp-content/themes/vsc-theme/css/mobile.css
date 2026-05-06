@@ -67,28 +67,4 @@ ul {
   width: 100% !important;
   height: auto;
 }
-
-@media (max-width: 767px) {
-  .hero-slide {
-    height: 70vh;
-    min-height: 400px;
-    justify-content: center;
-  }
-  .hero-slide__content {
-    margin-right: 0;
-    padding: 20px;
-    max-width: 100%;
-  }
-  .hero-slide__title {
-    font-size: 26px !important;
-  }
-  .hero-slide__btn {
-    padding: 12px 25px;
-    font-size: 13px !important;
-  }
-  .hero-bottom-bar {
-    font-size: 13px !important;
-    padding: 12px 15px;
-  }
-}
 /*# sourceMappingURL=../css/mobile.css.map */
