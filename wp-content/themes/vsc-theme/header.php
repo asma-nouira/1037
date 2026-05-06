@@ -25,13 +25,12 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-				?>	
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo">
+        Harissa <span>de Tunisie</span>
+    </a>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vsc-theme' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
@@ -39,6 +38,48 @@
 			) );
 			?>
 		</nav><!-- #site-navigation -->
+		<button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 	</header><!-- #masthead -->
+<!-- ============================================
+     BARRE SOCIALE FIXE
+     ============================================ -->
+<aside class="social-sidebar" aria-label="Réseaux sociaux">
+    <?php if ( get_theme_mod( 'harissa_facebook' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'harissa_facebook' ) ); ?>" target="_blank" rel="noopener" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( get_theme_mod( 'harissa_instagram' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'harissa_instagram' ) ); ?>" target="_blank" rel="noopener" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( get_theme_mod( 'harissa_pinterest' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'harissa_pinterest' ) ); ?>" target="_blank" rel="noopener" title="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( get_theme_mod( 'harissa_youtube' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'harissa_youtube' ) ); ?>" target="_blank" rel="noopener" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    <?php endif; ?>
+
+    <?php if ( get_theme_mod( 'harissa_tiktok' ) ) : ?>
+        <a href="<?php echo esc_url( get_theme_mod( 'harissa_tiktok' ) ); ?>" target="_blank" rel="noopener" title="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+    <?php endif; ?>
+</aside>
+
+<!-- Spacer pour compenser le header fixed -->
+<div style="height: 64px;"></div>
 
 	<div id="content" class="site-content">

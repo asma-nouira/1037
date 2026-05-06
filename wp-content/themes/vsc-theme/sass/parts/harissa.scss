@@ -1,0 +1,757 @@
+// ============================================
+// HARISSA DE TUNISIE — STYLES SCSS
+// ============================================
+
+// ============================================
+// 1. VARIABLES
+// ============================================
+$crimson:        #B8332E;
+$crimson-dark:   #8A1F1B;
+$crimson-light:  #D63A34;
+$sand:           #F5EDE0;
+$sand-light:     #FBF7F1;
+$terracotta:     #C4703F;
+$olive:          #5C6B3C;
+$olive-light:    #7A8E52;
+$charcoal:       #2B2926;
+$warm-gray:      #8C8579;
+$gold:           #C99A2E;
+$gold-light:     #e8c96a;
+$white:          #FFFFFF;
+
+$font-heading: 'Playfair Display', Georgia, serif;
+$font-body:    'Source Sans 3', 'Segoe UI', sans-serif;
+
+$radius-sm:   8px;
+$radius-md:   16px;
+$radius-lg:   30px;
+$radius-full: 9999px;
+
+$shadow-sm:   0 2px 8px rgba(43, 41, 38, 0.06);
+$shadow-md:   0 8px 30px rgba(43, 41, 38, 0.1);
+$shadow-lg:   0 16px 48px rgba(43, 41, 38, 0.12);
+$shadow-glow: 0 8px 30px rgba(184, 51, 46, 0.4);
+
+$transition: 0.3s ease;
+
+// Breakpoints
+$bp-tablet:  960px;
+$bp-mobile:  600px;
+
+
+// ============================================
+// 2. MIXINS
+// ============================================
+@mixin tablet {
+  @media (max-width: $bp-tablet) { @content; }
+}
+
+@mixin mobile {
+  @media (max-width: $bp-mobile) { @content; }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin section-padding($size: md) {
+  @if $size == sm { padding: 40px 32px; }
+  @else if $size == lg { padding: 100px 64px; }
+  @else { padding: 80px 48px; }
+
+  @include tablet { padding: 60px 32px; }
+  @include mobile { padding: 40px 20px; }
+}
+
+
+// ============================================
+// 3. RESET & BASE
+// ============================================
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $charcoal;
+  background-color: $sand-light;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $crimson;
+  text-decoration: none;
+  transition: color $transition;
+
+  &:hover { color: $crimson-dark; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  color: $charcoal;
+  line-height: 1.2;
+}
+
+h1 { font-size: 64px; @include tablet { font-size: 42px; } @include mobile { font-size: 34px; } }
+h2 { font-size: 42px; @include tablet { font-size: 32px; } @include mobile { font-size: 28px; } }
+h3 { font-size: 28px; }
+h4 { font-size: 22px; }
+
+p {
+  margin-bottom: 1em;
+  color: $warm-gray;
+}
+
+
+// ============================================
+// 4. NAVIGATION
+// ============================================
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba($sand-light, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba($crimson, 0.1);
+  transition: box-shadow $transition;
+
+  &.scrolled {
+    box-shadow: 0 2px 24px rgba($charcoal, 0.08);
+  }
+
+  @include tablet { padding: 14px 24px; }
+  @include mobile { padding: 12px 16px; }
+}
+
+.site-logo {
+  font-family: $font-heading;
+  font-size: 22px;
+  font-weight: 700;
+  color: $crimson;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+
+  span {
+    color: $terracotta;
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+.main-nav {
+  @include tablet { display: none; }
+
+  &.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $sand-light;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+
+    ul {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: $charcoal;
+    position: relative;
+    transition: color $transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $crimson;
+      transition: width $transition;
+    }
+
+    &:hover {
+      color: $crimson;
+      &::after { width: 100%; }
+    }
+  }
+
+  .current-menu-item a {
+    color: $crimson;
+    &::after { width: 100%; }
+  }
+
+  // Bouton CTA dans le menu
+  .menu-cta a {
+    background: $crimson;
+    color: $white !important;
+    padding: 10px 24px;
+    border-radius: $radius-full;
+    font-size: 13px !important;
+    transition: background $transition, transform 0.2s;
+
+    &::after { display: none !important; }
+
+    &:hover {
+      background: $crimson-dark;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Hamburger
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+
+  @include tablet { display: flex; }
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $charcoal;
+    transition: $transition;
+    border-radius: 2px;
+  }
+
+  &.active {
+    span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  }
+}
+
+
+// ============================================
+// 5. BOUTONS
+// ============================================
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: $radius-full;
+  background: $crimson;
+  color: $white;
+  font-family: $font-body;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    background: $crimson-light;
+    color: $white;
+    transform: translateY(-2px);
+    box-shadow: $shadow-glow;
+  }
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: $radius-full;
+  background: transparent;
+  color: $white;
+  font-family: $font-body;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba($white, 0.3);
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    background: rgba($white, 0.1);
+    border-color: rgba($white, 0.5);
+    color: $white;
+  }
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: $crimson;
+  font-weight: 600;
+  font-size: 15px;
+  transition: gap $transition;
+
+  &:hover { gap: 12px; }
+}
+
+
+// ============================================
+// 6. BARRE SOCIALE FIXE
+// ============================================
+.social-sidebar {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 900;
+
+  @include tablet { display: none; }
+
+  a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: $white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    @include flex-center;
+    color: $charcoal;
+    font-size: 16px;
+    transition: all $transition;
+    box-shadow: $shadow-sm;
+
+    &:hover {
+      background: $crimson;
+      color: $white;
+      border-color: $crimson;
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+// ============================================
+// 7. SECTIONS UTILITAIRES
+// ============================================
+.section-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $terracotta;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: $font-heading;
+  font-size: 42px;
+  line-height: 1.2;
+  color: $charcoal;
+  margin-bottom: 20px;
+
+  em {
+    font-style: italic;
+    color: $crimson;
+  }
+
+  @include tablet { font-size: 32px; }
+  @include mobile { font-size: 28px; }
+}
+
+.section-subtitle {
+  font-size: 17px;
+  line-height: 1.8;
+  color: $warm-gray;
+  font-weight: 300;
+  max-width: 560px;
+}
+
+// Backgrounds
+.bg-sand       { background-color: $sand; }
+.bg-sand-light { background-color: $sand-light; }
+.bg-charcoal   { background-color: $charcoal; color: $white; }
+.bg-hero {
+  background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 30%, #8a2a1a 60%, #4a1510 100%);
+  position: relative;
+}
+
+.text-center { text-align: center; }
+.text-white {
+  color: $white;
+  p { color: rgba($white, 0.75); }
+}
+
+// Padding pour WPBakery rows
+.vc-padding-sm { @include section-padding(sm); }
+.vc-padding-md { @include section-padding(md); }
+.vc-padding-lg { @include section-padding(lg); }
+
+
+// ============================================
+// 8. CARTES RECETTES
+// ============================================
+.recipe-card {
+  background: $white;
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform $transition, box-shadow $transition;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-lg;
+
+    .recipe-card__image img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: $white;
+
+    &--classic   { background: rgba($crimson, 0.9); }
+    &--variation { background: rgba($terracotta, 0.9); }
+    &--plat      { background: rgba($olive, 0.9); }
+  }
+
+  &__body {
+    padding: 24px;
+
+    h3 {
+      font-family: $font-heading;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: $warm-gray;
+  }
+}
+
+
+// ============================================
+// 9. STATS / CHIFFRES
+// ============================================
+.stat-item {
+  text-align: center;
+  padding: 48px 32px;
+  border-right: 1px solid rgba($white, 0.08);
+  transition: background $transition;
+
+  &:last-child { border-right: none; }
+  &:hover { background: rgba($crimson, 0.1); }
+
+  @include tablet {
+    border-right: none;
+    border-bottom: 1px solid rgba($white, 0.08);
+  }
+}
+
+.stat-number {
+  font-family: $font-heading;
+  font-size: 44px;
+  font-weight: 700;
+  color: #f0a86c;
+  margin-bottom: 8px;
+
+  @include mobile { font-size: 32px; }
+}
+
+.stat-label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba($white, 0.6);
+}
+
+
+// ============================================
+// 10. UNESCO BADGE
+// ============================================
+.unesco-badge {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba($gold, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $gold-light;
+  text-align: center;
+  margin: 0 auto;
+
+  &__year {
+    font-family: $font-heading;
+    font-size: 52px;
+    font-weight: 700;
+  }
+
+  &__label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+}
+
+
+// ============================================
+// 11. NEWSLETTER
+// ============================================
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+
+  @include mobile { flex-direction: column; }
+
+  input[type="email"] {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: $radius-full;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: $white;
+    font-family: $font-body;
+    font-size: 15px;
+    color: $charcoal;
+    outline: none;
+    transition: border-color $transition;
+
+    &:focus { border-color: $crimson; }
+  }
+
+  button {
+    padding: 14px 32px;
+    border-radius: $radius-full;
+    background: $crimson;
+    color: $white;
+    border: none;
+    font-family: $font-body;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background $transition;
+    white-space: nowrap;
+
+    &:hover { background: $crimson-dark; }
+  }
+}
+
+
+// ============================================
+// 12. FOOTER
+// ============================================
+.site-footer {
+  background: $charcoal;
+  color: rgba($white, 0.6);
+  padding: 64px 48px 32px;
+
+  @include tablet { padding: 48px 32px 24px; }
+
+  a:hover { color: #f0a86c; }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+
+  @include tablet  { grid-template-columns: 1fr 1fr; }
+  @include mobile  { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.footer-brand {
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 280px;
+    color: rgba($white, 0.5);
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+
+    a {
+      color: rgba($white, 0.5);
+      font-size: 18px;
+      transition: color $transition;
+
+      &:hover { color: #f0a86c; }
+    }
+  }
+}
+
+.footer-col {
+  h4 {
+    color: $white;
+    font-family: $font-body;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  ul { list-style: none; }
+
+  li { margin-bottom: 12px; }
+
+  a {
+    color: rgba($white, 0.5);
+    font-size: 14px;
+    transition: color $transition;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba($white, 0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+.lang-switch {
+  display: flex;
+  gap: 8px;
+
+  a {
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: rgba($white, 0.4);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all $transition;
+
+    &.active,
+    &:hover {
+      background: rgba($white, 0.1);
+      color: $white;
+    }
+  }
+}
+
+
+// ============================================
+// 13. ANIMATIONS
+// ============================================
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// ============================================
+// 14. WPBAKERY OVERRIDES
+// ============================================
+.vc_row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.vc_column-inner {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.vc_row[data-vc-full-width] {
+  overflow: visible;
+}
