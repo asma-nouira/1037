@@ -83,3 +83,9 @@
 <div style="height: 64px;"></div>
 
 	<div id="content" class="site-content">
+<div class="social-bar">
+  <a class="social-btn" title="Facebook">f</a>
+  <a class="social-btn" title="Instagram">ig</a>
+  <a class="social-btn" title="Pinterest">P</a>
+  <a class="social-btn" title="Partager">&#8599;</a>
+</div>
