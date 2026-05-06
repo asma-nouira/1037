@@ -543,8 +543,6 @@ p {
 /* ========== HERO ========== */
 .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 30%, #8a2a1a 60%, #4a1510 100%);
@@ -628,6 +626,16 @@ p {
   gap: 16px;
   flex-wrap: wrap;
   animation: heroIn 1s ease-out 0.7s both;
+}
+
+.hero-visual {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 520px;
+  animation: heroFloat 6s ease-in-out infinite, heroIn 1.2s ease-out 0.4s both;
 }
 
 .recipe-card {
