@@ -914,25 +914,22 @@ p {
   color: #8C8579;
 }
 
-.vce-row.recipes-section {
+.recipes-section > .vce-row-content {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 80px 48px;
-  background: #FBF7F1 !important;
 }
 @media (max-width: 960px) {
-  .vce-row.recipes-section {
+  .recipes-section > .vce-row-content {
     padding: 60px 32px;
   }
 }
 @media (max-width: 600px) {
-  .vce-row.recipes-section {
+  .recipes-section > .vce-row-content {
     padding: 40px 20px;
   }
 }
-.vce-row.recipes-section > .vce-row-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.vce-row.recipes-section .vce-col {
+.recipes-section .vce-col {
   padding: 14px;
 }
 

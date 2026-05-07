@@ -781,13 +781,11 @@ p {
 }
 
 // VCE row pour recettes
-.vce-row.recipes-section {
-  @include section-padding(md);
-  background: $sand-light !important;
-
+.recipes-section {
   > .vce-row-content {
     max-width: 1200px;
     margin: 0 auto;
+     @include section-padding(md);
   }
 
   .vce-col {
