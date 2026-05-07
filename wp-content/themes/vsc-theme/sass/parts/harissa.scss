@@ -1,5 +1,6 @@
 // ============================================
 // HARISSA DE TUNISIE — STYLES SCSS
+// Compatible Visual Composer (VCE)
 // ============================================
 
 // ============================================
@@ -34,7 +35,6 @@ $shadow-glow: 0 8px 30px rgba(184, 51, 46, 0.4);
 
 $transition: 0.3s ease;
 
-// Breakpoints
 $bp-tablet:  960px;
 $bp-mobile:  600px;
 
@@ -45,22 +45,18 @@ $bp-mobile:  600px;
 @mixin tablet {
   @media (max-width: $bp-tablet) { @content; }
 }
-
 @mixin mobile {
   @media (max-width: $bp-mobile) { @content; }
 }
-
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 @mixin section-padding($size: md) {
   @if $size == sm { padding: 40px 32px; }
   @else if $size == lg { padding: 100px 64px; }
   @else { padding: 80px 48px; }
-
   @include tablet { padding: 60px 32px; }
   @include mobile { padding: 40px 20px; }
 }
@@ -100,7 +96,6 @@ a {
   color: $crimson;
   text-decoration: none;
   transition: color $transition;
-
   &:hover { color: $crimson-dark; }
 }
 
@@ -109,7 +104,6 @@ h1, h2, h3, h4, h5, h6 {
   color: $charcoal;
   line-height: 1.2;
 }
-
 h1 { font-size: 64px; @include tablet { font-size: 42px; } @include mobile { font-size: 34px; } }
 h2 { font-size: 42px; @include tablet { font-size: 32px; } @include mobile { font-size: 28px; } }
 h3 { font-size: 28px; }
@@ -140,10 +134,7 @@ p {
   border-bottom: 1px solid rgba($crimson, 0.1);
   transition: box-shadow $transition;
 
-  &.scrolled {
-    box-shadow: 0 2px 24px rgba($charcoal, 0.08);
-  }
-
+  &.scrolled { box-shadow: 0 2px 24px rgba($charcoal, 0.08); }
   @include tablet { padding: 14px 24px; }
   @include mobile { padding: 12px 16px; }
 }
@@ -155,7 +146,6 @@ p {
   color: $crimson;
   letter-spacing: -0.5px;
   text-decoration: none;
-
   span {
     color: $terracotta;
     font-style: italic;
@@ -176,19 +166,10 @@ p {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     padding: 24px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-
-    ul {
-      flex-direction: column;
-      gap: 20px;
-      width: 100%;
-    }
+    ul { flex-direction: column; gap: 20px; width: 100%; }
   }
 
-  ul {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
+  ul { display: flex; gap: 32px; list-style: none; }
 
   a {
     font-size: 14px;
@@ -209,7 +190,6 @@ p {
       background: $crimson;
       transition: width $transition;
     }
-
     &:hover {
       color: $crimson;
       &::after { width: 100%; }
@@ -221,7 +201,6 @@ p {
     &::after { width: 100%; }
   }
 
-  // Bouton CTA dans le menu
   .menu-cta a {
     background: $crimson;
     color: $white !important;
@@ -229,17 +208,11 @@ p {
     border-radius: $radius-full;
     font-size: 13px !important;
     transition: background $transition, transform 0.2s;
-
     &::after { display: none !important; }
-
-    &:hover {
-      background: $crimson-dark;
-      transform: translateY(-1px);
-    }
+    &:hover { background: $crimson-dark; transform: translateY(-1px); }
   }
 }
 
-// Hamburger
 .menu-toggle {
   display: none;
   cursor: pointer;
@@ -248,9 +221,7 @@ p {
   flex-direction: column;
   gap: 5px;
   padding: 8px;
-
   @include tablet { display: flex; }
-
   span {
     display: block;
     width: 24px;
@@ -259,7 +230,6 @@ p {
     transition: $transition;
     border-radius: 2px;
   }
-
   &.active {
     span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     span:nth-child(2) { opacity: 0; }
@@ -286,7 +256,6 @@ p {
   border: none;
   cursor: pointer;
   transition: all $transition;
-
   &:hover {
     background: $crimson-light;
     color: $white;
@@ -310,7 +279,6 @@ p {
   border: 1px solid rgba($white, 0.3);
   cursor: pointer;
   transition: all $transition;
-
   &:hover {
     background: rgba($white, 0.1);
     border-color: rgba($white, 0.5);
@@ -326,7 +294,6 @@ p {
   font-weight: 600;
   font-size: 15px;
   transition: gap $transition;
-
   &:hover { gap: 12px; }
 }
 
@@ -343,7 +310,6 @@ p {
   flex-direction: column;
   gap: 12px;
   z-index: 900;
-
   @include tablet { display: none; }
 
   a {
@@ -357,7 +323,6 @@ p {
     font-size: 16px;
     transition: all $transition;
     box-shadow: $shadow-sm;
-
     &:hover {
       background: $crimson;
       color: $white;
@@ -369,8 +334,273 @@ p {
 
 
 // ============================================
-// 7. SECTIONS UTILITAIRES
+// 7. HERO — COMPATIBLE VISUAL COMPOSER (VCE)
 // ============================================
+//
+// STRUCTURE HTML VCE:
+// .vce-row.hero                          ← Row avec extra class "hero"
+//   .vce-row-content                     ← Container flex auto VCE
+//     .vce-col (1ère colonne)            ← Texte
+//       .vce-col-inner
+//         .vce-col-content
+//           .vce-text-block
+//             .vce-text-block-wrapper
+//               .hero-content            ← Notre div custom
+//     .vce-col (2ème colonne)            ← Visuel
+//       .vce-col-inner
+//         .vce-col-content
+//           .vce-text-block.hero-visual  ← Extra class "hero-visual"
+//             .vce-text-block-wrapper
+//               .pepper-circle
+
+.vce-row.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 30%, #8a2a1a 60%, #4a1510 100%) !important;
+
+  // Grain texture
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 150px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  // Radial color overlays
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba($terracotta, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba($olive, 0.2) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  // --- VCE Row Content = le flex container ---
+  > .vce-row-content {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  // --- 1ère colonne VCE : contenu texte ---
+  > .vce-row-content > .vce-col:first-child {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+
+    .vce-col-inner {
+      width: 100%;
+      background: transparent !important;
+    }
+
+    .vce-col-content {
+      width: 100%;
+    }
+  }
+
+  // --- 2ème colonne VCE : visuel pepper ---
+  > .vce-row-content > .vce-col:last-child {
+    flex: 0 0 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .vce-col-inner {
+      background: transparent !important;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include tablet {
+      flex: 0 0 auto;
+      width: 100%;
+      min-height: 300px;
+    }
+  }
+}
+
+// --- Hero Content ---
+.hero-content {
+  max-width: 680px;
+  padding: 140px 64px 80px;
+  animation: heroIn 1s ease-out;
+
+  @include tablet  { padding: 120px 32px 60px; }
+  @include mobile  { padding: 100px 20px 50px; }
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 64px;
+    line-height: 1.08;
+    color: $white !important;
+    margin-bottom: 24px;
+    animation: heroIn 1s ease-out 0.3s both;
+
+    em {
+      font-style: italic;
+      color: #f0a86c;
+    }
+
+    @include tablet  { font-size: 42px; }
+    @include mobile  { font-size: 34px; }
+  }
+
+  p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: rgba($white, 0.75) !important;
+    font-weight: 300;
+    max-width: 520px;
+    margin-bottom: 40px;
+    animation: heroIn 1s ease-out 0.5s both;
+
+    @include mobile { font-size: 16px; }
+  }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba($gold, 0.2);
+  border: 1px solid rgba($gold, 0.35);
+  color: $gold-light;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: heroIn 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: heroIn 1s ease-out 0.7s both;
+
+  @include mobile { flex-direction: column; }
+
+  // VCE peut ajouter des <br> entre les liens
+  br { display: none; }
+}
+
+// --- Hero Visual (pepper) ---
+// Cible le .vce-text-block qui porte la class "hero-visual"
+.vce-text-block.hero-visual,
+.hero-visual {
+  padding: 0 !important;
+  animation: heroFloat 6s ease-in-out infinite, heroIn 1.2s ease-out 0.4s both;
+
+  .vce-text-block-wrapper {
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    min-height: 420px;
+  }
+
+  @include tablet { display: none !important; }
+}
+
+.pepper-circle {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #c44420 0%, #8a1f1b 50%, #4a0f0c 100%);
+  @include flex-center;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3), inset 0 -20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    border: 1px solid rgba($white, 0.06);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 30%;
+    height: 20%;
+    border-radius: 50%;
+    background: rgba(255, 180, 120, 0.15);
+    filter: blur(20px);
+  }
+
+  @include tablet  { width: 300px; height: 300px; }
+}
+
+.pepper-emoji {
+  font-size: 140px;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+  position: relative;
+  z-index: 1;
+
+  @include tablet { font-size: 100px; }
+}
+
+.pepper-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba($white, 0.08);
+  animation: pepperSpin 30s linear infinite;
+
+  &:nth-child(1) { inset: 5%; }
+  &:nth-child(2) { inset: -8%; animation-direction: reverse; animation-duration: 45s; }
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes pepperSpin {
+  to { transform: rotate(360deg); }
+}
+
+
+// ============================================
+// 8. SECTIONS UTILITAIRES (VCE rows)
+// ============================================
+//
+// COMMENT UTILISER :
+// Dans VCE, ouvre les réglages de la Row
+// et ajoute la classe dans "Extra class name"
+// Exemple : bg-sand, bg-charcoal, section-intro, etc.
+
 .section-tag {
   font-size: 12px;
   font-weight: 600;
@@ -386,12 +616,7 @@ p {
   line-height: 1.2;
   color: $charcoal;
   margin-bottom: 20px;
-
-  em {
-    font-style: italic;
-    color: $crimson;
-  }
-
+  em { font-style: italic; color: $crimson; }
   @include tablet { font-size: 32px; }
   @include mobile { font-size: 28px; }
 }
@@ -404,13 +629,30 @@ p {
   max-width: 560px;
 }
 
-// Backgrounds
-.bg-sand       { background-color: $sand; }
-.bg-sand-light { background-color: $sand-light; }
-.bg-charcoal   { background-color: $charcoal; color: $white; }
-.bg-hero {
-  background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 30%, #8a2a1a 60%, #4a1510 100%);
-  position: relative;
+// --- Backgrounds pour VCE rows ---
+.vce-row.bg-sand       { background-color: $sand !important; }
+.vce-row.bg-sand-light { background-color: $sand-light !important; }
+
+.vce-row.bg-charcoal {
+  background-color: $charcoal !important;
+  &, h1, h2, h3, h4, h5, h6, p, span, div { color: $white; }
+  p { color: rgba($white, 0.75); }
+}
+
+.vce-row.bg-hero {
+  background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 30%, #8a2a1a 60%, #4a1510 100%) !important;
+}
+
+// Forcer fond transparent sur les enfants VCE
+.vce-row.bg-sand,
+.vce-row.bg-sand-light,
+.vce-row.bg-charcoal,
+.vce-row.bg-hero,
+.vce-row.hero {
+  > .vce-row-content,
+  .vce-col-inner {
+    background: transparent !important;
+  }
 }
 
 .text-center { text-align: center; }
@@ -419,117 +661,46 @@ p {
   p { color: rgba($white, 0.75); }
 }
 
-// Padding pour WPBakery rows
-.vc-padding-sm { @include section-padding(sm); }
-.vc-padding-md { @include section-padding(md); }
-.vc-padding-lg { @include section-padding(lg); }
-  
- /* ========== SOCIAL SHARE BAR ========== */
-  .social-bar {
-    position: fixed; right: 24px; top: 50%; transform: translateY(-50%);
-    display: flex; flex-direction: column; gap: 12px; z-index: 90;
-  }
-  .social-btn {
-    width: 42px; height: 42px; border-radius: 50%;
-    background: #fff; border: 1px solid rgba(0,0,0,0.08);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; color: var(--charcoal);
-    text-decoration: none; transition: all 0.3s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    cursor: pointer;
-  }
-  .social-btn:hover { background: var(--crimson); color: #fff; transform: scale(1.1); border-color: var(--crimson); }
+// --- Padding pour VCE rows ---
+.vce-row.vc-padding-sm { @include section-padding(sm); }
+.vce-row.vc-padding-md { @include section-padding(md); }
+.vce-row.vc-padding-lg { @include section-padding(lg); }
 
-  /* ========== HERO ========== */
-  .hero {
-    min-height: 100vh; 
-    position: relative; overflow: hidden;
-    background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 30%, #8a2a1a 60%, #4a1510 100%);
-    
-  }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: 
-      radial-gradient(ellipse at 70% 50%, rgba(196,112,63,0.3) 0%, transparent 60%),
-      radial-gradient(ellipse at 20% 80%, rgba(92,107,60,0.2) 0%, transparent 50%);
-  }
-  .hero-grain {
-    position: absolute; inset: 0; opacity: 0.06;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 150px;
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    max-width: 680px; padding: 140px 64px 80px;
-    animation: heroIn 1s ease-out;
-  }
-  @keyframes heroIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 16px; border-radius: 20px;
-    background: rgba(201,154,46,0.2); border: 1px solid rgba(201,154,46,0.35);
-    color: #e8c96a; font-size: 12px; font-weight: 600;
-    letter-spacing: 1.5px; text-transform: uppercase;
-    margin-bottom: 28px;
-    animation: heroIn 1s ease-out 0.2s both;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px; line-height: 1.08; color: #fff;
-    margin-bottom: 24px;
-    animation: heroIn 1s ease-out 0.3s both;
-  }
-  .hero h1 em { font-style: italic; color: #f0a86c; }
-  .hero p {
-    font-size: 19px; line-height: 1.7; color: rgba(255,255,255,0.75);
-    font-weight: 300; max-width: 520px; margin-bottom: 40px;
-    animation: heroIn 1s ease-out 0.5s both;
-  }
-  .hero-buttons {
-    display: flex; gap: 16px; flex-wrap: wrap;
-    animation: heroIn 1s ease-out 0.7s both;
-  }
-    .hero-visual {
-    position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
-    width: 520px; height: 520px;
-    animation: heroFloat 6s ease-in-out infinite, heroIn 1.2s ease-out 0.4s both;
-  }
- @keyframes heroFloat {
-    0%,100% { transform: translateY(-50%) rotate(0deg); }
-    50% { transform: translateY(calc(-50% - 12px)) rotate(2deg); }
-  }
-  .pepper-circle {
-    width: 100%; height: 100%; border-radius: 50%;
-    background: radial-gradient(circle at 40% 40%, #c44420 0%, #8a1f1b 50%, #4a0f0c 100%);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.3), inset 0 -20px 60px rgba(0,0,0,0.2);
-    position: relative; overflow: hidden;
-  }
-  .pepper-circle::before {
-    content: ''; position: absolute; inset: 15%;
-    border-radius: 50%; border: 1px solid rgba(255,255,255,0.06);
-  }
-  .pepper-circle::after {
-    content: ''; position: absolute; top: 15%; left: 25%;
-    width: 30%; height: 20%; border-radius: 50%;
-    background: rgba(255,180,120,0.15); filter: blur(20px);
-  }
-  .pepper-emoji {
-    font-size: 140px; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
-    position: relative; z-index: 1;
-  }
-  .pepper-ring {
-    position: absolute; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.08);
-    animation: pepperSpin 30s linear infinite;
-  }
-  .pepper-ring:nth-child(2) { inset: 5%; }
-  .pepper-ring:nth-child(3) { inset: -8%; animation-direction: reverse; animation-duration: 45s; }
-  @keyframes pepperSpin { to { transform: rotate(360deg); } }
+
 // ============================================
-// 8. CARTES RECETTES
+// 9. SECTION INTRO
+// ============================================
+.vce-row.section-intro {
+  @include section-padding(lg);
+  text-align: center;
+  background: $sand !important;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, $crimson, transparent);
+  }
+
+  .section-title {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+// ============================================
+// 10. CARTES RECETTES
 // ============================================
 .recipe-card {
   background: $white;
@@ -541,17 +712,13 @@ p {
   &:hover {
     transform: translateY(-6px);
     box-shadow: $shadow-lg;
-
-    .recipe-card__image img {
-      transform: scale(1.05);
-    }
+    .recipe-card__image img { transform: scale(1.05); }
   }
 
   &__image {
     height: 220px;
     overflow: hidden;
     position: relative;
-
     img {
       width: 100%;
       height: 100%;
@@ -571,7 +738,6 @@ p {
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: $white;
-
     &--classic   { background: rgba($crimson, 0.9); }
     &--variation { background: rgba($terracotta, 0.9); }
     &--plat      { background: rgba($olive, 0.9); }
@@ -579,18 +745,8 @@ p {
 
   &__body {
     padding: 24px;
-
-    h3 {
-      font-family: $font-heading;
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
+    h3 { font-family: $font-heading; font-size: 20px; margin-bottom: 8px; }
+    p  { font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
   }
 
   &__meta {
@@ -601,23 +757,84 @@ p {
   }
 }
 
+// VCE row pour recettes
+.vce-row.recipes-section {
+  @include section-padding(md);
+  background: $sand-light !important;
+
+  > .vce-row-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .vce-col {
+    padding: 14px;
+  }
+}
+
 
 // ============================================
-// 9. STATS / CHIFFRES
+// 11. SECTION HISTOIRE (split 50/50)
+// ============================================
+//
+// Structure VCE :
+// .vce-row.histoire-section
+//   .vce-row-content (flex)
+//     .vce-col (gauche = visuel UNESCO)
+//     .vce-col (droite = texte)
+
+.vce-row.histoire-section {
+  > .vce-row-content {
+    min-height: 500px;
+
+    // Colonne gauche : visuel sombre
+    > .vce-col:first-child {
+      .vce-col-inner {
+        background: linear-gradient(135deg, #4a1510, #8a2a1a) !important;
+        min-height: 500px;
+        @include flex-center;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse at center, rgba($gold, 0.15), transparent 70%);
+          pointer-events: none;
+        }
+      }
+
+      @include tablet { min-height: 260px; }
+    }
+
+    // Colonne droite : texte sur fond sable
+    > .vce-col:last-child {
+      .vce-col-inner {
+        background: $sand !important;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .vce-col-content {
+        padding: 80px 64px;
+
+        @include tablet  { padding: 48px 32px; }
+        @include mobile  { padding: 32px 20px; }
+      }
+    }
+  }
+}
+
+
+// ============================================
+// 12. STATS / CHIFFRES
 // ============================================
 .stat-item {
   text-align: center;
   padding: 48px 32px;
-  border-right: 1px solid rgba($white, 0.08);
   transition: background $transition;
-
-  &:last-child { border-right: none; }
   &:hover { background: rgba($crimson, 0.1); }
-
-  @include tablet {
-    border-right: none;
-    border-bottom: 1px solid rgba($white, 0.08);
-  }
 }
 
 .stat-number {
@@ -626,7 +843,6 @@ p {
   font-weight: 700;
   color: #f0a86c;
   margin-bottom: 8px;
-
   @include mobile { font-size: 32px; }
 }
 
@@ -637,9 +853,30 @@ p {
   color: rgba($white, 0.6);
 }
 
+// VCE row pour stats
+.vce-row.stats-section {
+  background: $charcoal !important;
+
+  > .vce-row-content > .vce-col {
+    border-right: 1px solid rgba($white, 0.08);
+
+    &:last-child { border-right: none; }
+
+    .vce-col-inner {
+      background: transparent !important;
+    }
+
+    @include tablet {
+      border-right: none;
+      border-bottom: 1px solid rgba($white, 0.08);
+      &:last-child { border-bottom: none; }
+    }
+  }
+}
+
 
 // ============================================
-// 10. UNESCO BADGE
+// 13. UNESCO BADGE
 // ============================================
 .unesco-badge {
   width: 200px;
@@ -653,13 +890,14 @@ p {
   color: $gold-light;
   text-align: center;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 
   &__year {
     font-family: $font-heading;
     font-size: 52px;
     font-weight: 700;
   }
-
   &__label {
     font-size: 11px;
     letter-spacing: 2px;
@@ -671,14 +909,13 @@ p {
 
 
 // ============================================
-// 11. NEWSLETTER
+// 14. NEWSLETTER
 // ============================================
 .newsletter-form {
   display: flex;
   gap: 12px;
   max-width: 480px;
   margin: 0 auto;
-
   @include mobile { flex-direction: column; }
 
   input[type="email"] {
@@ -692,7 +929,6 @@ p {
     color: $charcoal;
     outline: none;
     transition: border-color $transition;
-
     &:focus { border-color: $crimson; }
   }
 
@@ -708,22 +944,19 @@ p {
     cursor: pointer;
     transition: background $transition;
     white-space: nowrap;
-
     &:hover { background: $crimson-dark; }
   }
 }
 
 
 // ============================================
-// 12. FOOTER
+// 15. FOOTER
 // ============================================
 .site-footer {
   background: $charcoal;
   color: rgba($white, 0.6);
   padding: 64px 48px 32px;
-
   @include tablet { padding: 48px 32px 24px; }
-
   a:hover { color: #f0a86c; }
 }
 
@@ -732,7 +965,6 @@ p {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
   margin-bottom: 48px;
-
   @include tablet  { grid-template-columns: 1fr 1fr; }
   @include mobile  { grid-template-columns: 1fr; gap: 32px; }
 }
@@ -744,17 +976,14 @@ p {
     max-width: 280px;
     color: rgba($white, 0.5);
   }
-
   .footer-socials {
     display: flex;
     gap: 12px;
     margin-top: 20px;
-
     a {
       color: rgba($white, 0.5);
       font-size: 18px;
       transition: color $transition;
-
       &:hover { color: #f0a86c; }
     }
   }
@@ -769,11 +998,8 @@ p {
     text-transform: uppercase;
     margin-bottom: 20px;
   }
-
   ul { list-style: none; }
-
   li { margin-bottom: 12px; }
-
   a {
     color: rgba($white, 0.5);
     font-size: 14px;
@@ -788,18 +1014,12 @@ p {
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-
-  @include mobile {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
+  @include mobile { flex-direction: column; gap: 12px; text-align: center; }
 }
 
 .lang-switch {
   display: flex;
   gap: 8px;
-
   a {
     padding: 4px 10px;
     border-radius: 4px;
@@ -807,9 +1027,7 @@ p {
     font-size: 13px;
     font-weight: 600;
     transition: all $transition;
-
-    &.active,
-    &:hover {
+    &.active, &:hover {
       background: rgba($white, 0.1);
       color: $white;
     }
@@ -818,13 +1036,12 @@ p {
 
 
 // ============================================
-// 13. ANIMATIONS
+// 16. ANIMATIONS
 // ============================================
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-12px); }
@@ -834,27 +1051,38 @@ p {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  &.visible { opacity: 1; transform: translateY(0); }
+}
 
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
+
+// ============================================
+// 17. OVERRIDES VCE GLOBAUX
+// ============================================
+
+// Reset fond transparent sur toutes nos sections custom
+.vce-row[class*="hero"],
+.vce-row[class*="section-"],
+.vce-row[class*="stats-"],
+.vce-row[class*="bg-"] {
+  > .vce-row-content {
+    background: transparent !important;
+  }
+  .vce-col-inner {
+    background: transparent !important;
   }
 }
 
-
-// ============================================
-// 14. WPBAKERY OVERRIDES
-// ============================================
-.vc_row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+// Exception : histoire-section a ses propres fonds par colonne
+.vce-row.histoire-section {
+  .vce-col:first-child .vce-col-inner {
+    background: linear-gradient(135deg, #4a1510, #8a2a1a) !important;
+  }
+  .vce-col:last-child .vce-col-inner {
+    background: $sand !important;
+  }
 }
 
-.vc_column-inner {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.vc_row[data-vc-full-width] {
-  overflow: visible;
+// Reset font dans les text blocks VCE
+.vce-text-block {
+  font-family: $font-body;
 }
