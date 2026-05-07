@@ -105,7 +105,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display Bold", Georgia, serif;
   color: #2B2926;
   line-height: 1.2;
 }
@@ -182,7 +182,7 @@ p {
 }
 
 .site-logo {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 22px;
   font-weight: 700;
   color: #B8332E;
@@ -484,7 +484,7 @@ p {
   }
 }
 .hero-content h1 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 64px;
   line-height: 1.08;
   color: #FFFFFF !important;
@@ -670,7 +670,7 @@ p {
 }
 
 .section-title {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 42px;
   line-height: 1.2;
   color: #2B2926;
@@ -829,6 +829,7 @@ p {
   color: #2B2926;
   max-width: 600px;
   margin: 0 auto 20px;
+  font-weight: 700;
 }
 .section-intro h2 em {
   font-style: italic;
@@ -893,7 +894,7 @@ p {
   padding: 24px;
 }
 .recipe-card__body h3 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 20px;
   margin-bottom: 8px;
 }
@@ -984,7 +985,7 @@ p {
 }
 
 .stat-number {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 44px;
   font-weight: 700;
   color: #f0a86c;
@@ -1041,7 +1042,7 @@ p {
   z-index: 1;
 }
 .unesco-badge__year {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 52px;
   font-weight: 700;
 }

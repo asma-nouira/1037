@@ -20,7 +20,7 @@ $gold:           #C99A2E;
 $gold-light:     #e8c96a;
 $white:          #FFFFFF;
 
-$font-heading: 'Playfair Display', Georgia, serif;
+$font-heading: 'Playfair Display Bold', Georgia, serif;
 $font-body:    'Source Sans 3', 'Segoe UI', sans-serif;
 
 $radius-sm:   8px;
@@ -701,6 +701,7 @@ p {
     color: #2B2926;
     max-width: 600px;
     margin: 0 auto 20px;
+    font-weight: 700;
     em {
     font-style: italic;
     color: #B8332E;
