@@ -694,9 +694,17 @@ p {
     margin-left: auto;
     margin-right: auto;
   }
-  h2 em {
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    color: #2B2926;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    em {
     font-style: italic;
     color: #B8332E;
+  }
 }
 p {
     font-size: 17px;
