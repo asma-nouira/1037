@@ -129,12 +129,7 @@ function vsc_theme_scripts() {
 	);
 
 	// CSS Harissa (à créer dans /css/harissa.css)
-	wp_enqueue_style(
-		'harissa-style',
-		get_template_directory_uri() . '/css/harissa.css',
-		array( 'harissa-google-fonts', 'font-awesome' ),
-		'1.0.0'
-	);
+
 }
 add_action( 'wp_enqueue_scripts', 'vsc_theme_scripts' );
 
@@ -150,7 +145,7 @@ add_action( 'wp_footer', function() {
 	wp_enqueue_script( 'vsc-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), null, true );
 
 	// Script Harissa (scroll header, menu mobile, animations, compteurs)
-	wp_enqueue_script( 'harissa-main', get_template_directory_uri() . '/js/harissa.js', array(), '1.0.0', true );
+	//wp_enqueue_script( 'harissa-main', get_template_directory_uri() . '/js/harissa.js', array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

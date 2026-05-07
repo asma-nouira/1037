@@ -354,7 +354,6 @@ p {
 //               .pepper-circle
 
 .vce-row.hero {
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 30%, #8a2a1a 60%, #4a1510 100%) !important;
@@ -387,7 +386,6 @@ p {
   > .vce-row-content {
     display: flex !important;
     align-items: center !important;
-    min-height: 100vh;
     position: relative;
     z-index: 2;
     width: 100%;
