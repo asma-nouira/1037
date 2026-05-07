@@ -660,15 +660,15 @@ p {
 }
 
 // --- Padding pour VCE rows ---
-.vce-row.vc-padding-sm { @include section-padding(sm); }
-.vce-row.vc-padding-md { @include section-padding(md); }
-.vce-row.vc-padding-lg { @include section-padding(lg); }
+.vc-padding-sm { @include section-padding(sm); }
+.vc-padding-md { @include section-padding(md); }
+.vc-padding-lg { @include section-padding(lg); }
 
 
 // ============================================
 // 9. SECTION INTRO
 // ============================================
-.vce-row.section-intro {
+.section-intro {
   @include section-padding(lg);
   text-align: center;
   background: $sand !important;
