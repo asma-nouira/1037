@@ -494,6 +494,7 @@ p {
 .hero-content h1 em {
   font-style: italic;
   color: #f0a86c;
+  font-weight: 700;
 }
 @media (max-width: 960px) {
   .hero-content h1 {
@@ -834,6 +835,7 @@ p {
 .section-intro h2 em {
   font-style: italic;
   color: #B8332E;
+  font-weight: 700;
 }
 .section-intro p {
   font-size: 17px;

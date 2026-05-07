@@ -460,6 +460,7 @@ p {
     em {
       font-style: italic;
       color: #f0a86c;
+      font-weight: 700;
     }
 
     @include tablet  { font-size: 42px; }
@@ -705,6 +706,7 @@ p {
     em {
     font-style: italic;
     color: #B8332E;
+    font-weight: 700;
   }
 }
 p {
