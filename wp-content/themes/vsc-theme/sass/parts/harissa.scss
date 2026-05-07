@@ -694,6 +694,18 @@ p {
     margin-left: auto;
     margin-right: auto;
   }
+  h2 em {
+    font-style: italic;
+    color: var(--crimson);
+}
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    max-width: 560px;
+    margin: 0 auto;
+    font-weight: 300;
+}
 }
 
 
