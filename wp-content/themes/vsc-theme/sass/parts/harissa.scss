@@ -669,10 +669,10 @@ p {
 // 9. SECTION INTRO
 // ============================================
 .section-intro {
-  @include section-padding(lg);
-  text-align: center;
-  background: $sand !important;
   position: relative;
+  .vce-row-content{
+ @include section-padding(lg);
+  }
 
   &::before {
     content: '';

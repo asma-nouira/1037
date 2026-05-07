@@ -788,18 +788,18 @@ p {
 }
 
 .section-intro {
-  padding: 100px 64px;
-  text-align: center;
-  background: #F5EDE0 !important;
   position: relative;
 }
+.section-intro .vce-row-content {
+  padding: 100px 64px;
+}
 @media (max-width: 960px) {
-  .section-intro {
+  .section-intro .vce-row-content {
     padding: 60px 32px;
   }
 }
 @media (max-width: 600px) {
-  .section-intro {
+  .section-intro .vce-row-content {
     padding: 40px 20px;
   }
 }
