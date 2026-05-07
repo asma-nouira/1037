@@ -914,20 +914,26 @@ p {
   color: #8C8579;
 }
 
-.recipes-section > .vce-row-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.recipes > .vce-row-content {
+  padding: 60px 32px 80px;
+}
+
+.recipes-section {
   padding: 80px 48px;
 }
 @media (max-width: 960px) {
-  .recipes-section > .vce-row-content {
+  .recipes-section {
     padding: 60px 32px;
   }
 }
 @media (max-width: 600px) {
-  .recipes-section > .vce-row-content {
+  .recipes-section {
     padding: 40px 20px;
   }
+}
+.recipes-section > .vce-row-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .recipes-section .vce-col {
   padding: 14px;
