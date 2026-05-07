@@ -461,6 +461,7 @@ p {
       font-style: italic;
       color: #f0a86c;
       font-weight: 700;
+        font-family: 'Playfair Display ItalicBold', serif;
     }
 
     @include tablet  { font-size: 42px; }
@@ -705,6 +706,7 @@ p {
     font-weight: 700;
     em {
     font-style: italic;
+     font-family: 'Playfair Display ItalicBold', serif;
     color: #B8332E;
     font-weight: 700;
   }
