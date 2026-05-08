@@ -1312,8 +1312,11 @@ a.recipe-card {
       font-family: $font-body !important;
       font-size: 15px !important;
     }
-
-    .sib-form-block__button {
+ .sib_signup_box_inside_1{
+    display: flex;
+    gap: 12px;
+}
+    .sib-default-btn {
       padding: 16px 36px !important;
       border-radius: $radius-full !important;
       background: $crimson !important;

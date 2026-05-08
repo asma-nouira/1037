@@ -1493,7 +1493,11 @@ a.recipe-card .recipe-card__meta i {
   font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
   font-size: 15px !important;
 }
-.newsletter .sib_signup_form .sib-form-block__button {
+.newsletter .sib_signup_form .sib_signup_box_inside_1 {
+  display: flex;
+  gap: 12px;
+}
+.newsletter .sib_signup_form .sib-default-btn {
   padding: 16px 36px !important;
   border-radius: 9999px !important;
   background: #B8332E !important;
