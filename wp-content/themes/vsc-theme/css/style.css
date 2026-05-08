@@ -1498,6 +1498,9 @@ a.recipe-card .recipe-card__meta i {
   transition: border-color 0.3s;
   width: 100%;
 }
+.newsletter .sib_signup_form .sib-email-area {
+  width: 100%;
+}
 .newsletter .sib_signup_form .sib_signup_box_inside_1 {
   display: flex;
   gap: 12px;
