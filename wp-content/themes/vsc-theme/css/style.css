@@ -963,6 +963,49 @@ p {
   min-height: 260px;
 }
 
+.histoire-content {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--sand);
+}
+
+.histoire-content .section-tag {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.histoire-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.histoire-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--warm-gray);
+  max-width: 460px;
+  margin-bottom: 28px;
+}
+
+.histoire-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--crimson);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: gap 0.3s;
+}
+
+.histoire-content a:hover {
+  gap: 12px;
+}
+
 .stat-item {
   text-align: center;
   padding: 48px 32px;
