@@ -842,6 +842,7 @@ h2 {
 .stat-item {
   text-align: center;
   padding: 48px 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   transition: background $transition;
   &:hover { background: rgba($crimson, 0.1); }
 }
