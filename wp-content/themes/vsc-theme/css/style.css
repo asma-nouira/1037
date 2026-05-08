@@ -1487,11 +1487,15 @@ a.recipe-card .recipe-card__meta i {
   padding: 0 !important;
 }
 .newsletter .sib_signup_form input[type=email] {
-  padding: 16px 22px !important;
-  border-radius: 9999px !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
-  font-size: 15px !important;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  color: #2B2926;
+  outline: none;
+  transition: border-color 0.3s;
 }
 .newsletter .sib_signup_form .sib_signup_box_inside_1 {
   display: flex;
@@ -1504,6 +1508,11 @@ a.recipe-card .recipe-card__meta i {
   font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
   font-size: 15px !important;
   font-weight: 600 !important;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
 }
 
 /**************/

@@ -1306,11 +1306,15 @@ a.recipe-card {
     }
 
     input[type="email"] {
-      padding: 16px 22px !important;
-      border-radius: $radius-full !important;
-      border: 1px solid rgba(0, 0, 0, 0.1) !important;
-      font-family: $font-body !important;
-      font-size: 15px !important;
+     padding: 14px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    color: $charcoal;
+    outline: none;
+    transition: border-color 0.3s;
     }
  .sib_signup_box_inside_1{
     display: flex;
@@ -1323,6 +1327,12 @@ a.recipe-card {
       font-family: $font-body !important;
       font-size: 15px !important;
       font-weight: 600 !important;
+          border: none;
+          color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+
     }
   }
 }
