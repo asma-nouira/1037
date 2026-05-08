@@ -1479,21 +1479,21 @@ a.recipe-card .recipe-card__meta i {
   margin-bottom: 32px;
   font-weight: 300;
 }
-.newsletter .sib-form {
+.newsletter .sib_signup_form {
   max-width: 500px !important;
   margin: 0 auto !important;
 }
-.newsletter .sib-form .sib-form-block {
+.newsletter .sib_signup_form .sib-form-block {
   padding: 0 !important;
 }
-.newsletter .sib-form input[type=email] {
+.newsletter .sib_signup_form input[type=email] {
   padding: 16px 22px !important;
   border-radius: 9999px !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
   font-size: 15px !important;
 }
-.newsletter .sib-form .sib-form-block__button {
+.newsletter .sib_signup_form .sib-form-block__button {
   padding: 16px 36px !important;
   border-radius: 9999px !important;
   background: #B8332E !important;
