@@ -1115,6 +1115,9 @@ h2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  @media (max-width: 960px) {
+    padding: 0;
+  }
 }
 
 // --- Header : titre + lien "Voir toutes" ---
