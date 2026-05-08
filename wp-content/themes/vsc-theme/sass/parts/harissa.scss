@@ -1297,11 +1297,11 @@ a.recipe-card {
   }
 
   // --- Formulaire ---
-  &__form {
+  form {
     margin-bottom: 16px;
   }
 
-  &__input-wrap {
+  input {
     display: flex;
     gap: 12px;
     max-width: 500px;
@@ -1336,7 +1336,7 @@ a.recipe-card {
       }
     }
 
-    button {
+    input[type="submit"] {
       padding: 16px 36px;
       border-radius: $radius-full;
       background: $crimson;
