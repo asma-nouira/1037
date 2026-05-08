@@ -383,4 +383,5 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 require get_template_directory() . '/inc/shortcode-recettes.php';
 require get_template_directory() . '/inc/shortcode-newsletter.php';
+require get_template_directory() . '/inc/shortcode-histoire.php';
 include_once "integrated_vc.php";
