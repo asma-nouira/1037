@@ -902,12 +902,12 @@ h2 {
   position: relative;
   z-index: 1;
 
-  &__year {
+  & .year {
     font-family: $font-heading;
     font-size: 52px;
     font-weight: 700;
   }
-  &__label {
+  & .label {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;

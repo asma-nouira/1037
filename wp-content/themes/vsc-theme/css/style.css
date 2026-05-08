@@ -1064,12 +1064,12 @@ p {
   position: relative;
   z-index: 1;
 }
-.unesco-badge__year {
+.unesco-badge .year {
   font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 52px;
   font-weight: 700;
 }
-.unesco-badge__label {
+.unesco-badge .label {
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
