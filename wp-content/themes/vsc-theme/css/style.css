@@ -1250,10 +1250,10 @@ p {
   background: transparent !important;
 }
 
-.vce-row.histoire-section .vce-col:first-child .vce-col-inner {
+.histoire-section .vce-col:first-child .vce-col-inner {
   background: linear-gradient(135deg, #4a1510, #8a2a1a) !important;
 }
-.vce-row.histoire-section .vce-col:last-child .vce-col-inner {
+.histoire-section .vce-col:last-child .vce-col-inner {
   background: #F5EDE0 !important;
 }
 

@@ -1094,7 +1094,7 @@ p {
 }
 
 // Exception : histoire-section a ses propres fonds par colonne
-.vce-row.histoire-section {
+.histoire-section {
   .vce-col:first-child .vce-col-inner {
     background: linear-gradient(135deg, #4a1510, #8a2a1a) !important;
   }
