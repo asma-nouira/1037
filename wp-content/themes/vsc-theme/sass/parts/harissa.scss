@@ -813,48 +813,7 @@ p {
     content: ''; position: absolute; inset: 0;
     background: radial-gradient(ellipse at center, rgba(201,154,46,0.15), transparent 70%);
   }
-.histoire-section {
-  > .vce-row-content {
-    min-height: 500px;
-
-    // Colonne gauche : visuel sombre
-    > .vce-col:first-child {
-      .vce-col-inner {
-        background: linear-gradient(135deg, #4a1510, #8a2a1a) !important;
-        min-height: 500px;
-        @include flex-center;
-        position: relative;
-
-        &::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(ellipse at center, rgba($gold, 0.15), transparent 70%);
-          pointer-events: none;
-        }
-      }
-
-      @include tablet { min-height: 260px; }
-    }
-
-    // Colonne droite : texte sur fond sable
-    > .vce-col:last-child {
-      .vce-col-inner {
-        background: $sand !important;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
-
-      .vce-col-content {
-        padding: 80px 64px;
-
-        @include tablet  { padding: 48px 32px; }
-        @include mobile  { padding: 32px 20px; }
-      }
-    }
-  }
-}
+   .histoire-visual { min-height: 260px; }
 
 
 // ============================================
