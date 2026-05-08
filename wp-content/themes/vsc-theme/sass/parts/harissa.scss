@@ -779,7 +779,13 @@ p {
     color: $warm-gray;
   }
 }
-.recipes > .vce-row-content { padding: 60px 32px 80px; }
+.recipes > .vce-row-content {
+   padding: 60px 32px 80px;
+   @media (max-width: 960px) {
+        padding: 60px 32px 80px;
+}
+  
+  }
 // VCE row pour recettes
 .recipes-section {
   @include section-padding(md);
