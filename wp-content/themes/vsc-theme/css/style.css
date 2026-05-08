@@ -964,7 +964,12 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--sand);
+  background: #F5EDE0;
+}
+@media (max-width: 960px) {
+  .histoire-content {
+    padding: 48px 32px;
+  }
 }
 .histoire-content .section-tag {
   text-align: left;

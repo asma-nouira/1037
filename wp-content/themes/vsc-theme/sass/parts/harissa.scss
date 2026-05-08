@@ -816,7 +816,10 @@ p {
  .histoire-content {
     padding: 80px 64px;
     display: flex; flex-direction: column; justify-content: center;
-    background: var(--sand);
+    background: $sand;
+    @media (max-width: 960px) {
+        padding: 48px 32px;
+}
 .section-tag { text-align: left; margin-bottom: 12px; }
 h2 {
     font-family: 'Playfair Display Bold', serif;
