@@ -1315,10 +1315,12 @@ a.recipe-card {
     color: $charcoal;
     outline: none;
     transition: border-color 0.3s;
+    width:100%;
     }
  .sib_signup_box_inside_1{
     display: flex;
     gap: 12px;
+    justify-content: space-between;
 }
     .sib-default-btn {
       padding: 16px 36px !important;

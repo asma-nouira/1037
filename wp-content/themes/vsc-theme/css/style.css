@@ -1496,10 +1496,12 @@ a.recipe-card .recipe-card__meta i {
   color: #2B2926;
   outline: none;
   transition: border-color 0.3s;
+  width: 100%;
 }
 .newsletter .sib_signup_form .sib_signup_box_inside_1 {
   display: flex;
   gap: 12px;
+  justify-content: space-between;
 }
 .newsletter .sib_signup_form .sib-default-btn {
   padding: 16px 36px !important;
