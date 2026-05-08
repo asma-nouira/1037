@@ -1457,22 +1457,23 @@ a.recipe-card .recipe-card__meta i {
 }
 
 .newsletter {
+  padding: 80px 64px;
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
+  background: #F5EDE0;
+  position: relative;
 }
-.newsletter__title {
+.newsletter h2 {
   font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 32px;
   color: #2B2926;
   margin-bottom: 12px;
 }
 @media (max-width: 600px) {
-  .newsletter__title {
+  .newsletter h2 {
     font-size: 26px;
   }
 }
-.newsletter__desc {
+.newsletter .desc {
   font-size: 16px;
   color: #8C8579;
   margin-bottom: 32px;

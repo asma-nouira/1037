@@ -1275,11 +1275,12 @@ a.recipe-card {
   }
 }
 .newsletter {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 80px 64px;
+    text-align: center;
+    background: $sand;
+    position: relative;
 
-  &__title {
+  h2{
     font-family: $font-heading;
     font-size: 32px;
     color: $charcoal;
@@ -1288,7 +1289,7 @@ a.recipe-card {
     @include mobile { font-size: 26px; }
   }
 
-  &__desc {
+  .desc {
     font-size: 16px;
     color: $warm-gray;
     margin-bottom: 32px;
