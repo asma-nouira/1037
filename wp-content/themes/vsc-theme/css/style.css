@@ -464,7 +464,7 @@ p {
   .vce-row.hero > .vce-row-content > .vce-col:last-child {
     flex: 0 0 auto;
     width: 100%;
-    min-height: 300px;
+    min-height: 100px;
   }
 }
 
