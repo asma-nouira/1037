@@ -1279,6 +1279,9 @@ a.recipe-card {
     text-align: center;
     background: $sand;
     position: relative;
+      @media (max-width: 960px) {
+        padding: 60px 32px;
+      }
 
   h2{
     font-family: $font-heading;
@@ -1324,6 +1327,9 @@ a.recipe-card {
     display: flex;
     gap: 12px;
     justify-content: space-between;
+    @media (max-width: 600px) {
+              flex-direction: column;
+    }
 }
     .sib-default-btn {
       padding: 16px 36px !important;
@@ -1338,6 +1344,9 @@ a.recipe-card {
     transition: all 0.3s;
     white-space: nowrap;
 
+     @media (max-width: 600px) {
+      width:100%;
+     }
     }
   }
 }
