@@ -1456,6 +1456,153 @@ a.recipe-card .recipe-card__meta i {
   background: linear-gradient(135deg, #B8332E, #C4703F);
 }
 
+.newsletter {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.newsletter__title {
+  font-family: "Playfair Display Bold", Georgia, serif;
+  font-size: 32px;
+  color: #2B2926;
+  margin-bottom: 12px;
+}
+@media (max-width: 600px) {
+  .newsletter__title {
+    font-size: 26px;
+  }
+}
+.newsletter__desc {
+  font-size: 16px;
+  color: #8C8579;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.newsletter__form {
+  margin-bottom: 16px;
+}
+.newsletter__input-wrap {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .newsletter__input-wrap {
+    flex-direction: column;
+  }
+}
+.newsletter__input-wrap input[type=email] {
+  flex: 1;
+  padding: 16px 22px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-size: 15px;
+  color: #2B2926;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.newsletter__input-wrap input[type=email]::placeholder {
+  color: rgba(43, 41, 38, 0.4);
+}
+.newsletter__input-wrap input[type=email]:focus {
+  border-color: #B8332E;
+  box-shadow: 0 0 0 3px rgba(184, 51, 46, 0.1);
+}
+.newsletter__input-wrap input[type=email]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.newsletter__input-wrap button {
+  padding: 16px 36px;
+  border-radius: 9999px;
+  background: #B8332E;
+  color: #FFFFFF;
+  border: none;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+}
+.newsletter__input-wrap button:hover:not(:disabled) {
+  background: #8A1F1B;
+  transform: translateY(-1px);
+}
+.newsletter__input-wrap button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+@media (max-width: 600px) {
+  .newsletter__input-wrap button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.newsletter__message {
+  margin-top: 16px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.newsletter__message--success {
+  background: rgba(92, 107, 60, 0.1);
+  color: #5C6B3C;
+  border: 1px solid rgba(92, 107, 60, 0.2);
+}
+.newsletter__message--error {
+  background: rgba(184, 51, 46, 0.08);
+  color: #B8332E;
+  border: 1px solid rgba(184, 51, 46, 0.15);
+}
+.newsletter__success {
+  padding: 24px;
+  background: rgba(92, 107, 60, 0.08);
+  border-radius: 16px;
+  color: #5C6B3C;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.newsletter__rgpd {
+  font-size: 12px;
+  color: rgba(43, 41, 38, 0.4);
+  margin-top: 16px;
+}
+.newsletter .sib-form {
+  max-width: 500px !important;
+  margin: 0 auto !important;
+}
+.newsletter .sib-form .sib-form-block {
+  padding: 0 !important;
+}
+.newsletter .sib-form input[type=email] {
+  padding: 16px 22px !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+  font-size: 15px !important;
+}
+.newsletter .sib-form .sib-form-block__button {
+  padding: 16px 36px !important;
+  border-radius: 9999px !important;
+  background: #B8332E !important;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
 /**************/
 .wpcf7-not-valid-tip {
   display: none !important;

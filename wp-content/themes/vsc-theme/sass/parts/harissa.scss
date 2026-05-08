@@ -1274,3 +1274,167 @@ a.recipe-card {
     background: linear-gradient(135deg, $crimson, $terracotta);
   }
 }
+.newsletter {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 32px;
+    color: $charcoal;
+    margin-bottom: 12px;
+
+    @include mobile { font-size: 26px; }
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: $warm-gray;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  // --- Formulaire ---
+  &__form {
+    margin-bottom: 16px;
+  }
+
+  &__input-wrap {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include mobile { flex-direction: column; }
+
+    input[type="email"] {
+      flex: 1;
+      padding: 16px 22px;
+      border-radius: $radius-full;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: $white;
+      font-family: $font-body;
+      font-size: 15px;
+      color: $charcoal;
+      outline: none;
+      transition: border-color $transition, box-shadow $transition;
+
+      &::placeholder {
+        color: rgba($charcoal, 0.4);
+      }
+
+      &:focus {
+        border-color: $crimson;
+        box-shadow: 0 0 0 3px rgba($crimson, 0.1);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    button {
+      padding: 16px 36px;
+      border-radius: $radius-full;
+      background: $crimson;
+      color: $white;
+      border: none;
+      font-family: $font-body;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background $transition, transform 0.2s;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 140px;
+
+      &:hover:not(:disabled) {
+        background: $crimson-dark;
+        transform: translateY(-1px);
+      }
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      @include mobile {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+
+  // --- Messages ---
+  &__message {
+    margin-top: 16px;
+    padding: 12px 20px;
+    border-radius: $radius-sm;
+    font-size: 14px;
+    font-weight: 500;
+
+    &--success {
+      background: rgba($olive, 0.1);
+      color: $olive;
+      border: 1px solid rgba($olive, 0.2);
+    }
+
+    &--error {
+      background: rgba($crimson, 0.08);
+      color: $crimson;
+      border: 1px solid rgba($crimson, 0.15);
+    }
+  }
+
+  // --- Succès (remplace le formulaire) ---
+  &__success {
+    padding: 24px;
+    background: rgba($olive, 0.08);
+    border-radius: $radius-md;
+    color: $olive;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  // --- Texte RGPD ---
+  &__rgpd {
+    font-size: 12px;
+    color: rgba($charcoal, 0.4);
+    margin-top: 16px;
+  }
+
+  // --- Override styles Brevo si plugin utilisé ---
+  .sib-form {
+    max-width: 500px !important;
+    margin: 0 auto !important;
+
+    .sib-form-block {
+      padding: 0 !important;
+    }
+
+    input[type="email"] {
+      padding: 16px 22px !important;
+      border-radius: $radius-full !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      font-family: $font-body !important;
+      font-size: 15px !important;
+    }
+
+    .sib-form-block__button {
+      padding: 16px 36px !important;
+      border-radius: $radius-full !important;
+      background: $crimson !important;
+      font-family: $font-body !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+    }
+  }
+}
