@@ -1905,14 +1905,14 @@ a.recipe-card .recipe-card__meta i {
   font-size: 14px;
 }
 
-.vce-row.traditions-section > .vce-row-content {
+.traditions-section > .vce-row-content {
   max-width: 1100px;
   margin: 0 auto;
   align-items: center;
   gap: 64px;
 }
 @media (max-width: 960px) {
-  .vce-row.traditions-section > .vce-row-content {
+  .traditions-section > .vce-row-content {
     gap: 32px;
   }
 }
@@ -1921,12 +1921,6 @@ a.recipe-card .recipe-card__meta i {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  min-height: 480px;
-}
-@media (max-width: 960px) {
-  .traditions-img {
-    min-height: 300px;
-  }
 }
 .traditions-img img {
   width: 100%;

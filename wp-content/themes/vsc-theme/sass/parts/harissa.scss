@@ -1716,7 +1716,7 @@ a.recipe-card {
 // ============================================
 // 21. TRADITIONS (split image + texte)
 // ============================================
-.vce-row.traditions-section {
+.traditions-section {
   > .vce-row-content {
     max-width: 1100px;
     margin: 0 auto;
@@ -1730,9 +1730,7 @@ a.recipe-card {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  min-height: 480px;
 
-  @include tablet { min-height: 300px; }
 
   img {
     width: 100%;
