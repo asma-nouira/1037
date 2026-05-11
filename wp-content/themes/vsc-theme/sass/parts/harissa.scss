@@ -1878,11 +1878,8 @@ a.recipe-card {
 // .unesco-badge, .unesco-stars, .unesco-text
 // ============================================
 .unesco-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   min-height: 480px;
 
-  @include tablet { grid-template-columns: 1fr; }
 }
 
 .unesco-visual {

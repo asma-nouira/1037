@@ -2058,14 +2058,7 @@ a.recipe-card .recipe-card__meta i {
 }
 
 .unesco-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   min-height: 480px;
-}
-@media (max-width: 960px) {
-  .unesco-section {
-    grid-template-columns: 1fr;
-  }
 }
 
 .unesco-visual {
