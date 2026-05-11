@@ -1550,7 +1550,7 @@ a.recipe-card .recipe-card__meta i {
   }
 }
 
-.vce-row.page-hero {
+.page-hero {
   min-height: 50vh;
   background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 35%, #4a1510 100%) !important;
   display: flex;
@@ -1558,7 +1558,7 @@ a.recipe-card .recipe-card__meta i {
   position: relative;
   overflow: hidden;
 }
-.vce-row.page-hero::before {
+.page-hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1568,7 +1568,7 @@ a.recipe-card .recipe-card__meta i {
   z-index: 1;
   pointer-events: none;
 }
-.vce-row.page-hero::after {
+.page-hero::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1576,29 +1576,29 @@ a.recipe-card .recipe-card__meta i {
   z-index: 1;
   pointer-events: none;
 }
-.vce-row.page-hero > .vce-row-content {
+.page-hero > .vce-row-content {
   position: relative;
   z-index: 2;
   background: transparent !important;
 }
-.vce-row.page-hero .vce-col-inner {
+.page-hero .vce-col-inner {
   background: transparent !important;
 }
-.vce-row.page-hero .page-hero-content {
+.page-hero .page-hero-content {
   max-width: 700px;
   padding: 160px 64px 80px;
 }
 @media (max-width: 960px) {
-  .vce-row.page-hero .page-hero-content {
+  .page-hero .page-hero-content {
     padding: 120px 32px 60px;
   }
 }
 @media (max-width: 600px) {
-  .vce-row.page-hero .page-hero-content {
+  .page-hero .page-hero-content {
     padding: 100px 20px 50px;
   }
 }
-.vce-row.page-hero .page-hero-content .tag {
+.page-hero .page-hero-content .tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1613,29 +1613,29 @@ a.recipe-card .recipe-card__meta i {
   text-transform: uppercase;
   margin-bottom: 24px;
 }
-.vce-row.page-hero .page-hero-content h1 {
+.page-hero .page-hero-content h1 {
   font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 54px;
   line-height: 1.1;
   color: #FFFFFF !important;
   margin-bottom: 20px;
 }
-.vce-row.page-hero .page-hero-content h1 em {
+.page-hero .page-hero-content h1 em {
   font-style: italic;
   color: #f0a86c;
   font-family: "Playfair Display ItalicBold", serif;
 }
 @media (max-width: 960px) {
-  .vce-row.page-hero .page-hero-content h1 {
+  .page-hero .page-hero-content h1 {
     font-size: 38px;
   }
 }
 @media (max-width: 600px) {
-  .vce-row.page-hero .page-hero-content h1 {
+  .page-hero .page-hero-content h1 {
     font-size: 30px;
   }
 }
-.vce-row.page-hero .page-hero-content p {
+.page-hero .page-hero-content p {
   font-size: 18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.7) !important;
