@@ -1553,8 +1553,6 @@ a.recipe-card .recipe-card__meta i {
 .page-hero {
   min-height: 50vh;
   background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 35%, #4a1510 100%) !important;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
 }
