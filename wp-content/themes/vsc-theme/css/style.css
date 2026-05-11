@@ -1583,7 +1583,6 @@ a.recipe-card .recipe-card__meta i {
   background: transparent !important;
 }
 .page-hero .page-hero-content {
-  max-width: 700px;
   padding: 160px 64px 80px;
 }
 @media (max-width: 960px) {
