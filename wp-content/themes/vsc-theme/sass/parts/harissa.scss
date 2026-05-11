@@ -1873,8 +1873,36 @@ a.recipe-card {
 
 
 // ============================================
-// 24. UNESCO RING ANIMATION
+// 20. UNESCO SECTION
+// Classes maquette : .unesco-section, .unesco-visual,
+// .unesco-badge, .unesco-stars, .unesco-text
 // ============================================
+.unesco-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+
+  @include tablet { grid-template-columns: 1fr; }
+}
+
+.unesco-visual {
+  background: linear-gradient(135deg, #4a1510, #8a2a1a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba($gold, 0.15), transparent 70%);
+  }
+
+  @include tablet { min-height: 300px; }
+}
+
 .unesco-stars {
   position: absolute;
   width: 280px;
@@ -1886,4 +1914,30 @@ a.recipe-card {
 
 @keyframes unescoSpin {
   to { transform: rotate(360deg); }
+}
+
+.unesco-text {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $sand;
+
+  @include tablet { padding: 48px 32px; }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: $charcoal;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: $warm-gray;
+    margin-bottom: 16px;
+    max-width: 460px;
+  }
 }
