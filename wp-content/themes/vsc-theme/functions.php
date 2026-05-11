@@ -140,7 +140,8 @@ add_action( 'wp_footer', function() {
 	wp_enqueue_style( 'vsc-mobile-style', get_template_directory_uri() . '/css/mobile.css', array(), null );
 	wp_enqueue_style( 'vsc-theme-style', get_template_directory_uri() . '/css/style.css', array(), null );
 	wp_enqueue_style( 'vsc-theme-fonts', get_template_directory_uri() . '/css/fonts/fonts.css', array(), null );
-
+wp_enqueue_style( 'vsc-theme-fonts', get_template_directory_uri() . '/css/fonts/tabler-icons.min.css', array(), null );
+wp_enqueue_style( 'vsc-theme-fonts', get_template_directory_uri() . '/css/fonts/tabler-icons.scss', array(), null );
 	wp_enqueue_script( 'vsc-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), null, true );
 	wp_enqueue_script( 'vsc-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), null, true );
 
