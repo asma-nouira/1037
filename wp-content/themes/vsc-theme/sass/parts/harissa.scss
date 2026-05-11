@@ -1362,3 +1362,531 @@ a.recipe-card {
     }
   }
 }
+
+
+// ============================================
+// 18. PAGE HERO (pages internes : Histoire, Culture, etc.)
+// ============================================
+.vce-row.page-hero {
+  min-height: 50vh;
+  background: linear-gradient(135deg, #3a0d0b 0%, #6b1a14 35%, #4a1510 100%) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 150px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba($terracotta, 0.25) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  > .vce-row-content {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+  }
+
+  .vce-col-inner {
+    background: transparent !important;
+  }
+
+  .page-hero-content {
+    max-width: 700px;
+    padding: 160px 64px 80px;
+
+    @include tablet  { padding: 120px 32px 60px; }
+    @include mobile  { padding: 100px 20px 50px; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      background: rgba($gold, 0.2);
+      border: 1px solid rgba($gold, 0.35);
+      color: $gold-light;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: $font-heading;
+      font-size: 54px;
+      line-height: 1.1;
+      color: $white !important;
+      margin-bottom: 20px;
+
+      em {
+        font-style: italic;
+        color: #f0a86c;
+        font-family: 'Playfair Display ItalicBold', serif;
+      }
+
+      @include tablet  { font-size: 38px; }
+      @include mobile  { font-size: 30px; }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba($white, 0.7) !important;
+      font-weight: 300;
+      max-width: 540px;
+    }
+  }
+}
+
+
+// ============================================
+// 19. TIMELINE [harissa_timeline]
+// ============================================
+.harissa-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 64px;
+    color: $charcoal;
+
+    @include mobile { font-size: 28px; margin-bottom: 40px; }
+  }
+
+  // --- Ligne verticale centrale ---
+  &__track {
+    position: relative;
+    padding: 20px 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, rgba($crimson, 0.25) 10%, rgba($crimson, 0.25) 90%, transparent);
+      transform: translateX(-50%);
+
+      @include tablet { left: 24px; }
+    }
+  }
+
+  // --- Chaque événement ---
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 56px;
+    position: relative;
+
+    &:last-child { margin-bottom: 0; }
+
+    // Alternance gauche/droite
+    &--left {
+      flex-direction: row;
+      .harissa-timeline__card { margin-right: auto; text-align: right; padding-right: 70px; }
+    }
+
+    &--right {
+      flex-direction: row-reverse;
+      .harissa-timeline__card { margin-left: auto; text-align: left; padding-left: 70px; }
+    }
+
+    // Mobile : tout à droite
+    @include tablet {
+      flex-direction: row !important;
+      .harissa-timeline__card {
+        margin-left: 56px !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+        padding: 24px !important;
+        width: auto !important;
+      }
+    }
+
+    // Highlight (2022)
+    &--highlight {
+      .harissa-timeline__dot {
+        background: $crimson;
+        border-color: $crimson;
+        color: $white;
+        box-shadow: 0 0 0 6px rgba($crimson, 0.15);
+      }
+
+      .harissa-timeline__card {
+        border-color: rgba($crimson, 0.15);
+        background: rgba($crimson, 0.02);
+      }
+
+      .harissa-timeline__year {
+        background: rgba($crimson, 0.1);
+        color: $crimson-dark;
+      }
+    }
+  }
+
+  // --- Point sur la ligne ---
+  &__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: $white;
+    border: 2px solid rgba($crimson, 0.2);
+    @include flex-center;
+    z-index: 2;
+    flex-shrink: 0;
+    color: $crimson;
+    font-size: 18px;
+    transition: all $transition;
+
+    @include tablet { left: 24px; }
+  }
+
+  // --- Carte contenu ---
+  &__card {
+    width: calc(50% - 40px);
+    background: $white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: $radius-md;
+    padding: 28px;
+    transition: transform $transition, box-shadow $transition;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__year {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 20px;
+    background: rgba($terracotta, 0.1);
+    color: $terracotta;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__card-title {
+    font-family: $font-heading;
+    font-size: 20px;
+    color: $charcoal;
+    margin-bottom: 8px;
+  }
+
+  &__card-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: $warm-gray;
+    margin: 0;
+  }
+}
+
+
+// ============================================
+// 20. RÉGIONS [harissa_regions]
+// ============================================
+.harissa-regions {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 48px;
+    color: $charcoal;
+
+    @include mobile { font-size: 28px; margin-bottom: 32px; }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @include tablet { grid-template-columns: repeat(2, 1fr); }
+    @include mobile { grid-template-columns: 1fr; }
+  }
+
+  &__card {
+    background: $white;
+    border-radius: $radius-md;
+    padding: 28px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform $transition, box-shadow $transition;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-md;
+    }
+
+    // Couleurs par région
+    &--crimson {
+      &::before { background: $crimson; }
+      .harissa-regions__card-icon { background: rgba($crimson, 0.08); color: $crimson; }
+    }
+    &--terracotta {
+      &::before { background: $terracotta; }
+      .harissa-regions__card-icon { background: rgba($terracotta, 0.08); color: $terracotta; }
+    }
+    &--olive {
+      &::before { background: $olive; }
+      .harissa-regions__card-icon { background: rgba($olive, 0.08); color: $olive; }
+    }
+    &--gold {
+      &::before { background: $gold; }
+      .harissa-regions__card-icon { background: rgba($gold, 0.08); color: $gold; }
+    }
+
+    &-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      @include flex-center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: $font-heading;
+      font-size: 18px;
+      color: $charcoal;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: $warm-gray;
+      margin-bottom: 16px;
+    }
+
+    &-detail {
+      font-size: 12px;
+      color: $olive;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+      i { font-size: 14px; }
+    }
+  }
+}
+
+
+// ============================================
+// 21. TRADITIONS (split image + texte)
+// ============================================
+.vce-row.traditions-section {
+  > .vce-row-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 64px;
+    @include tablet { gap: 32px; }
+  }
+}
+
+.traditions-img {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  min-height: 480px;
+
+  @include tablet { min-height: 300px; }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+
+    span {
+      color: $white;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+}
+
+.traditions-content {
+  h2 {
+    font-family: $font-heading;
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: $charcoal;
+
+    @include mobile { font-size: 26px; }
+  }
+
+  h3 {
+    font-family: $font-heading;
+    font-size: 22px;
+    color: $charcoal;
+    margin: 28px 0 12px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: $warm-gray;
+  }
+}
+
+
+// ============================================
+// 22. GALERIE PHOTOS
+// ============================================
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include tablet { grid-template-columns: repeat(2, 1fr); }
+  @include mobile { grid-template-columns: 1fr 1fr; }
+}
+
+.gallery-item {
+  border-radius: 14px;
+  overflow: hidden;
+  height: 240px;
+  position: relative;
+  cursor: pointer;
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.02);
+
+    .gallery-overlay { opacity: 1; }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity $transition;
+
+  span {
+    color: $white;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+}
+
+
+// ============================================
+// 23. CTA SECTION (bandeau sombre vers recettes)
+// ============================================
+.vce-row.cta-section {
+  background: $charcoal !important;
+  text-align: center;
+
+  > .vce-row-content {
+    background: transparent !important;
+  }
+
+  .vce-col-inner {
+    background: transparent !important;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 32px;
+    color: $white !important;
+    margin-bottom: 12px;
+
+    @include mobile { font-size: 26px; }
+  }
+
+  p {
+    font-size: 16px;
+    color: rgba($white, 0.6) !important;
+    margin-bottom: 32px;
+  }
+}
+
+
+// ============================================
+// 24. UNESCO RING ANIMATION
+// ============================================
+.unesco-stars {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px dashed rgba($gold, 0.2);
+  animation: unescoSpin 40s linear infinite;
+}
+
+@keyframes unescoSpin {
+  to { transform: rotate(360deg); }
+}
