@@ -25,7 +25,7 @@ function harissa_timeline_shortcode( $atts ) {
             'year'  => '3000 av. J.-C.',
             'title' => 'Les origines du piment',
             'desc'  => 'Le piment est cultivé pour la première fois en Amérique du Sud. Il faudra des millénaires avant qu\'il n\'atteigne les côtes nord-africaines.',
-            'icon'  => 'ti-seed',
+            'icon'  => 'ti-seeding',
         ),
         array(
             'year'  => 'XVIe siècle',
