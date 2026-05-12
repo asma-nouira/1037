@@ -2055,28 +2055,29 @@ a.recipe-card .recipe-card__meta i {
   background: linear-gradient(135deg, #c99a2e, #e8c96a);
 }
 
-.vce-row.cta-section {
+.cta-section {
   background: #2B2926 !important;
   text-align: center;
+  padding: 80px 64px;
 }
-.vce-row.cta-section > .vce-row-content {
+.cta-section > .vce-row-content {
   background: transparent !important;
 }
-.vce-row.cta-section .vce-col-inner {
+.cta-section .vce-col-inner {
   background: transparent !important;
 }
-.vce-row.cta-section h2 {
+.cta-section h2 {
   font-family: "Playfair Display Bold", Georgia, serif;
   font-size: 32px;
   color: #FFFFFF !important;
   margin-bottom: 12px;
 }
 @media (max-width: 600px) {
-  .vce-row.cta-section h2 {
+  .cta-section h2 {
     font-size: 26px;
   }
 }
-.vce-row.cta-section p {
+.cta-section p {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6) !important;
   margin-bottom: 32px;

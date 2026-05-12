@@ -1872,9 +1872,10 @@ h2 {
 // ============================================
 // 23. CTA SECTION (bandeau sombre vers recettes)
 // ============================================
-.vce-row.cta-section {
+.cta-section {
   background: $charcoal !important;
   text-align: center;
+      padding: 80px 64px;
 
   > .vce-row-content {
     background: transparent !important;
