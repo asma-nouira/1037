@@ -1787,6 +1787,24 @@ a.recipe-card {
 // ============================================
 // 22. GALERIE PHOTOS
 // ============================================
+.gallery-section {
+    padding: 80px 64px 100px;
+    background: $sand;
+    .section-tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $terracotta;
+    margin-bottom: 16px;
+&>h2 {
+    font-family: 'Playfair Display Bold', serif;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 48px;
+}
+}
+}
 .gallery-grid {
   max-width: 1100px;
   margin: 0 auto;
