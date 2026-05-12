@@ -2656,6 +2656,147 @@ a.recipe-card .recipe-card__meta i {
   }
 }
 
+.contact-sidebar h2 {
+  font-family: "Playfair Display Bold", Georgia, serif;
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: #2B2926;
+}
+
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 240px;
+  background: linear-gradient(135deg, #d4c5a9, #b8a88a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.contact-map-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #B8332E;
+}
+.contact-map-pin i {
+  font-size: 36px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+.contact-map-pin span {
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.contact-hours {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 24px;
+}
+.contact-hours h3 {
+  font-family: "Playfair Display Bold", Georgia, serif;
+  font-size: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2B2926;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+}
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-day {
+  color: #2B2926;
+  font-weight: 500;
+}
+
+.hours-time {
+  color: #8C8579;
+}
+.hours-time.closed {
+  color: #B8332E;
+  font-weight: 600;
+}
+
+.contact-socials {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.contact-socials h3 {
+  font-family: "Playfair Display Bold", Georgia, serif;
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #2B2926;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2B2926;
+}
+.social-link:hover {
+  background: rgba(184, 51, 46, 0.04);
+  color: #B8332E;
+}
+.social-link i {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.social-link--fb i {
+  background: rgba(59, 89, 152, 0.08);
+  color: #3b5998;
+}
+.social-link--ig i {
+  background: rgba(225, 48, 108, 0.08);
+  color: #e1306c;
+}
+.social-link--pt i {
+  background: rgba(189, 8, 28, 0.08);
+  color: #bd081c;
+}
+.social-link--yt i {
+  background: rgba(255, 0, 0, 0.08);
+  color: #ff0000;
+}
+
 .wpcf7 .wpcf7-form {
   margin: 0;
   padding: 0;
