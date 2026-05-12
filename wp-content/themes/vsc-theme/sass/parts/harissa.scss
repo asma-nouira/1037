@@ -2338,3 +2338,408 @@ h2 {
     color: $warm-gray;
   }
 }
+// ============================================
+// 30. PAGE CONTACT — INFO CARDS
+// Classes : .contact-cards, .contact-card, .contact-card-icon
+// ============================================
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: -40px auto 0;
+  position: relative;
+  z-index: 10;
+  padding: 0 64px;
+
+  @include tablet  { grid-template-columns: 1fr; padding: 0 32px; margin-top: -30px; }
+  @include mobile  { padding: 0 20px; }
+}
+
+.contact-card {
+  background: $white;
+  border-radius: $radius-md;
+  padding: 32px 28px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform $transition, box-shadow $transition;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $crimson;
+  }
+
+  &:nth-child(2)::before { background: $terracotta; }
+  &:nth-child(3)::before { background: $olive; }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+  }
+
+  h3 {
+    font-family: $font-heading;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: $charcoal;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: $warm-gray;
+    margin: 0 0 8px;
+  }
+
+  a {
+    color: $crimson;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.contact-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  @include flex-center;
+  font-size: 24px;
+  margin: 0 auto 16px;
+}
+
+.contact-card:nth-child(1) .contact-card-icon { background: rgba($crimson, 0.08); color: $crimson; }
+.contact-card:nth-child(2) .contact-card-icon { background: rgba($terracotta, 0.08); color: $terracotta; }
+.contact-card:nth-child(3) .contact-card-icon { background: rgba($olive, 0.08); color: $olive; }
+
+
+// ============================================
+// 31. PAGE CONTACT — LAYOUT (form + sidebar)
+// Classes : .contact-section, .contact-grid
+// ============================================
+.contact-section {
+  padding: 80px 64px;
+  background: $sand-light;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include tablet  { padding: 60px 32px; }
+  @include mobile  { padding: 40px 20px; }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+// ============================================
+// 32. PAGE CONTACT — FORMULAIRE
+// Classes : .contact-form, .form-row, .form-group,
+// .form-label, .form-input, .form-textarea, .form-select,
+// .form-checkbox, .btn-submit, .form-message
+// ============================================
+.contact-form {
+  background: $white;
+  border-radius: $radius-md;
+  padding: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  @include mobile { padding: 28px 20px; }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: $charcoal;
+  }
+
+  > p {
+    font-size: 15px;
+    color: $warm-gray;
+    margin-bottom: 32px;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  @include tablet { grid-template-columns: 1fr; }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+
+  &.full { grid-column: 1 / -1; }
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: $charcoal;
+  letter-spacing: 0.3px;
+
+  .required { color: $crimson; }
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: $white;
+  font-family: $font-body;
+  font-size: 15px;
+  color: $charcoal;
+  outline: none;
+  transition: border-color $transition, box-shadow $transition;
+  width: 100%;
+
+  &:focus {
+    border-color: $crimson;
+    box-shadow: 0 0 0 3px rgba($crimson, 0.08);
+  }
+
+  &::placeholder { color: rgba($charcoal, 0.35); }
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238C8579' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+
+  input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: $crimson;
+    width: 16px;
+    height: 16px;
+  }
+
+  label {
+    font-size: 13px;
+    color: $warm-gray;
+    line-height: 1.5;
+
+    a { color: $crimson; font-weight: 600; }
+  }
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border-radius: $radius-full;
+  background: $crimson;
+  color: $white;
+  font-family: $font-body;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all $transition;
+  width: 100%;
+  justify-content: center;
+
+  &:hover {
+    background: $crimson-dark;
+    transform: translateY(-1px);
+    box-shadow: $shadow-glow;
+  }
+}
+
+.form-message {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  display: none;
+
+  &--success {
+    background: rgba($olive, 0.1);
+    color: $olive;
+    border: 1px solid rgba($olive, 0.2);
+  }
+
+  &--error {
+    background: rgba($crimson, 0.08);
+    color: $crimson;
+    border: 1px solid rgba($crimson, 0.15);
+  }
+}
+
+
+// ============================================
+// 33. PAGE CONTACT — SIDEBAR
+// Classes : .contact-sidebar, .contact-map,
+// .contact-map-pin, .contact-hours, .hours-row,
+// .contact-socials, .social-links, .social-link
+// ============================================
+.contact-sidebar {
+  h2 {
+    font-family: $font-heading;
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: $charcoal;
+  }
+}
+
+.contact-map {
+  border-radius: $radius-md;
+  overflow: hidden;
+  height: 240px;
+  background: linear-gradient(135deg, #d4c5a9, #b8a88a);
+  @include flex-center;
+  position: relative;
+  margin-bottom: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.contact-map-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: $crimson;
+
+  i {
+    font-size: 36px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  }
+
+  span {
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.5);
+    color: $white;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+}
+
+.contact-hours {
+  background: $white;
+  border-radius: $radius-md;
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 24px;
+
+  h3 {
+    font-family: $font-heading;
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $charcoal;
+  }
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+
+  &:last-child { border-bottom: none; }
+}
+
+.hours-day {
+  color: $charcoal;
+  font-weight: 500;
+}
+
+.hours-time {
+  color: $warm-gray;
+
+  &.closed {
+    color: $crimson;
+    font-weight: 600;
+  }
+}
+
+.contact-socials {
+  background: $white;
+  border-radius: $radius-md;
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  h3 {
+    font-family: $font-heading;
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: $charcoal;
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: background $transition;
+  font-size: 14px;
+  font-weight: 500;
+  color: $charcoal;
+
+  &:hover {
+    background: rgba($crimson, 0.04);
+    color: $crimson;
+  }
+
+  i {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    @include flex-center;
+    font-size: 18px;
+  }
+
+  &--fb i { background: rgba(59, 89, 152, 0.08); color: #3b5998; }
+  &--ig i { background: rgba(225, 48, 108, 0.08); color: #e1306c; }
+  &--pt i { background: rgba(189, 8, 28, 0.08); color: #bd081c; }
+  &--yt i { background: rgba(255, 0, 0, 0.08); color: #ff0000; }
+}
