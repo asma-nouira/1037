@@ -1981,7 +1981,7 @@ a.recipe-card .recipe-card__meta i {
   color: #C4703F;
   margin-bottom: 16px;
 }
-.gallery-section .section-tag > h2 {
+.gallery-section .section-tag h2 {
   font-family: "Playfair Display Bold", serif;
   font-size: 32px;
   text-align: center;
